@@ -1,3 +1,4 @@
+```html
 <!doctype html>
 <html lang="es">
 <head>
@@ -5,145 +6,586 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Emilia Mantese · Portfolio Audiovisual</title>
   <meta name="description" content="Portfolio audiovisual de Emilia Mantese: realización, edición y contenido para marcas, cultura, redes y proyectos personales." />
+
   <style>
-    /* VERSION_FINAL_SIN_BEIGE_HELVETICA_ROSA_ROJO - Emilia Mantese */
+    /* Emilia Mantese · Portfolio Audiovisual · Rosa/Rojo · Helvetica */
+
     :root{
       --pink:#ffabc0;
       --pink-strong:#ff7fa3;
       --red:#ff1f14;
       --black:#111111;
-      --line:rgba(255,36,24,.42);
-      --soft:rgba(255,31,20,.08);
+      --line:rgba(255,36,24,.22);
     }
 
-    *{box-sizing:border-box}
-    html{scroll-behavior:smooth}
+    *{
+      box-sizing:border-box;
+    }
+
+    html{
+      scroll-behavior:smooth;
+    }
+
     body{
       margin:0;
       font-family:Helvetica, Arial, sans-serif;
       background:var(--pink);
       background-image:
-        linear-gradient(rgba(255,36,24,.18) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255,36,24,.18) 1px, transparent 1px);
+        linear-gradient(var(--line) 1px, transparent 1px),
+        linear-gradient(90deg, var(--line) 1px, transparent 1px);
       background-size:34px 34px;
       color:var(--red);
       line-height:1.45;
       -webkit-font-smoothing:antialiased;
     }
 
-    a{color:inherit}
-    .container{width:min(1180px, calc(100% - 40px)); margin:0 auto}
+    a{
+      color:inherit;
+    }
+
+    .container{
+      width:min(1180px, calc(100% - 40px));
+      margin:0 auto;
+    }
 
     header{
       position:sticky;
       top:0;
       z-index:20;
-      background:rgba(255,171,192,.92);
+      background:rgba(255,171,192,.94);
       backdrop-filter:blur(12px);
       border-bottom:1px solid var(--red);
     }
-    .topbar{display:flex; align-items:center; justify-content:space-between; gap:20px; padding:18px 0}
-    .brand{font-size:13px; font-weight:700; letter-spacing:.08em; text-transform:uppercase; color:var(--red)}
-    nav{display:flex; gap:18px; flex-wrap:wrap; font-size:12px; font-weight:700; letter-spacing:.06em; text-transform:uppercase}
-    nav a{text-decoration:none; padding-bottom:3px; border-bottom:1px solid transparent}
-    nav a:hover{border-bottom-color:var(--red)}
 
-    .hero{padding:86px 0 72px}
-    .hero-grid{display:grid; grid-template-columns:minmax(0,1.05fr) minmax(320px,.85fr); gap:56px; align-items:center}
-    .kicker{margin:0 0 18px; font-size:12px; font-weight:700; letter-spacing:.16em; text-transform:uppercase; color:var(--red)}
-    h1,h2,h3{font-family:Helvetica, Arial, sans-serif; margin:0; color:var(--red); letter-spacing:-.065em}
-    h1{font-size:clamp(54px, 8vw, 112px); line-height:.86; font-weight:700; max-width:860px}
-    .lead{max-width:680px; margin:24px 0 0; color:var(--red); font-size:clamp(17px,1.55vw,21px); line-height:1.42; font-weight:400}
+    .topbar{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:20px;
+      padding:18px 0;
+    }
 
-    .hero-actions{display:flex; gap:10px; flex-wrap:wrap; margin-top:30px}
+    .brand{
+      font-size:13px;
+      font-weight:700;
+      letter-spacing:.08em;
+      text-transform:uppercase;
+      color:var(--red);
+    }
+
+    nav{
+      display:flex;
+      gap:18px;
+      flex-wrap:wrap;
+      font-size:12px;
+      font-weight:700;
+      letter-spacing:.06em;
+      text-transform:uppercase;
+    }
+
+    nav a{
+      text-decoration:none;
+      padding-bottom:3px;
+      border-bottom:1px solid transparent;
+    }
+
+    nav a:hover{
+      border-bottom-color:var(--red);
+    }
+
+    .hero{
+      padding:86px 0 78px;
+    }
+
+    .hero-grid{
+      display:grid;
+      grid-template-columns:minmax(320px,.82fr) minmax(520px,1.18fr);
+      gap:56px;
+      align-items:center;
+    }
+
+    .kicker{
+      margin:0 0 20px;
+      font-size:12px;
+      font-weight:700;
+      letter-spacing:.16em;
+      text-transform:uppercase;
+      color:var(--red);
+    }
+
+    h1,
+    h2,
+    h3{
+      font-family:Helvetica, Arial, sans-serif;
+      margin:0;
+      color:var(--red);
+      letter-spacing:-.065em;
+    }
+
+    h1{
+      font-size:clamp(48px, 6.7vw, 92px);
+      line-height:.9;
+      font-weight:700;
+      max-width:780px;
+    }
+
+    .lead{
+      max-width:620px;
+      margin:26px 0 0;
+      color:var(--red);
+      font-size:clamp(17px,1.45vw,20px);
+      line-height:1.45;
+      font-weight:400;
+    }
+
+    .hero-actions{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      margin-top:34px;
+    }
+
     .btn{
-      display:inline-flex; align-items:center; justify-content:center;
-      min-height:42px; padding:11px 16px;
-      border:1px solid var(--red); border-radius:999px;
-      color:var(--red); background:transparent;
-      text-decoration:none; text-transform:uppercase;
-      font-size:12px; font-weight:700; letter-spacing:.05em;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      min-height:42px;
+      padding:11px 16px;
+      border:1px solid var(--red);
+      border-radius:999px;
+      color:var(--red);
+      background:transparent;
+      text-decoration:none;
+      text-transform:uppercase;
+      font-size:12px;
+      font-weight:700;
+      letter-spacing:.05em;
       transition:background .15s ease, color .15s ease, transform .15s ease;
     }
-    .btn:hover{background:var(--red); color:var(--pink)}
-    .btn.primary{background:var(--red); color:var(--pink)}
-    .btn.primary:hover{transform:translateY(-1px)}
 
-    .hero-card{border:1px solid var(--red); background:transparent; padding:10px}
-    .hero-card video{width:100%; aspect-ratio:9/16; max-height:660px; object-fit:cover; display:block; background:#000; border:1px solid var(--red)}
-    .hero-note{margin:10px 0 0; color:var(--red); font-size:12px; line-height:1.35}
-
-    .stats{display:grid; grid-template-columns:repeat(4,1fr); gap:0; margin-top:36px; border:1px solid var(--red)}
-   .stat{min-height:104px; padding:16px; border-right:1px solid var(--red); background:transparent}
-    .stat:last-child{border-right:0}
-    .stat strong{display:block; font-size:36px; line-height:1; font-weight:700; letter-spacing:-.06em}
-    .stat span{display:block; margin-top:8px; color:var(--red); font-size:12px; font-weight:400; line-height:1.25}
-
-    section{padding:64px 0; border-top:1px solid var(--red)}
-    .section-title{max-width:760px; margin-bottom:30px}
-    h2{font-size:clamp(42px, 6vw, 82px); line-height:.88; font-weight:700}
-    .section-copy{max-width:620px; margin:16px 0 0; color:var(--red); font-size:14px; font-weight:400; line-height:1.55}
-
-    .category-list{display:grid; grid-template-columns:repeat(5,1fr); gap:1px; border:1px solid var(--red); background:var(--red)}
-    .cat{min-height:160px; padding:16px; background:var(--pink)}
-    .cat h3{margin:0 0 10px; font-size:22px; line-height:.96; font-weight:700}
-    .cat p{margin:0; color:var(--red); font-size:13px; line-height:1.45; font-weight:400}
-
-    .filters{display:flex; gap:8px; flex-wrap:wrap; margin-bottom:24px}
-    .filter{
-      appearance:none; cursor:pointer;
-      border:1px solid var(--red); border-radius:999px;
-      background:transparent; color:var(--red);
-      padding:9px 12px; text-transform:uppercase;
-      font:700 11px Helvetica, Arial, sans-serif; letter-spacing:.04em;
+    .btn:hover{
+      background:var(--red);
+      color:var(--pink);
     }
-    .filter.active,.filter:hover{background:var(--red); color:var(--pink)}
 
-    .grid{display:grid; grid-template-columns:repeat(3,1fr); gap:1px; border:1px solid var(--red); background:var(--red)}
-    .project-card{display:flex; flex-direction:column; min-height:100%; background:var(--pink); overflow:hidden; transition:background .15s ease}
-    .project-card:hover{background:var(--pink-strong)}
-    .project-card.featured{background:var(--pink)}
-    .project-card.featured:hover{background:var(--pink-strong)}
-    .media-wrap{position:relative; background:#000; border-bottom:1px solid var(--red)}
-    .media-wrap video{width:100%; aspect-ratio:9/14; object-fit:cover; display:block; background:#000}
-    .pill{position:absolute; top:10px; left:10px; background:var(--red); color:var(--pink); border-radius:999px; padding:6px 9px; text-transform:uppercase; font-size:10px; font-weight:700; letter-spacing:.05em}
-    .project-body{padding:17px; display:flex; flex-direction:column; gap:10px; flex:1}
-    .eyebrow{margin:0; color:var(--red); text-transform:uppercase; font-size:10px; font-weight:700; letter-spacing:.055em}
-    h3{font-size:26px; line-height:.96; font-weight:700}
-    .project-body p{margin:0; color:var(--red); font-size:13px; font-weight:400; line-height:1.45}
-    .role{margin-top:auto!important; padding-top:12px; border-top:1px solid var(--red); font-size:11px!important; font-weight:700!important; text-transform:uppercase}
+    .btn.primary{
+      background:var(--red);
+      color:var(--pink);
+    }
 
-    .process{display:grid; grid-template-columns:repeat(3,1fr); gap:1px; border:1px solid var(--red); background:var(--red)}
-    .process-card{padding:22px; min-height:190px; background:var(--pink)}
-    .process-card span{display:inline-block; margin-bottom:12px; font-size:12px; font-weight:700; color:var(--red)}
-    .process-card h3{font-size:30px; margin-bottom:12px}
-    .process-card p{color:var(--red); font-size:14px; font-weight:400; margin:0}
+    .btn.primary:hover{
+      transform:translateY(-1px);
+    }
 
-    footer{padding:64px 0 76px; border-top:1px solid var(--red)}
-    .footer-card{background:var(--red); color:var(--pink); padding:34px; border:1px solid var(--red)}
-    .footer-card h2{color:var(--pink); font-size:clamp(42px, 6vw, 82px)}
-    .footer-card p{color:var(--pink); max-width:640px; font-size:16px; font-weight:400}
-    .footer-card .btn{border-color:var(--pink); color:var(--pink); background:transparent}
-    .footer-card .btn:hover,.footer-card .btn.primary{background:var(--pink); color:var(--red)}
-    .small{font-size:12px!important; margin-top:16px!important; opacity:.88}
+    .stats{
+      display:grid;
+      grid-template-columns:repeat(2,1fr);
+      gap:0;
+      margin-top:46px;
+      border:1px solid var(--red);
+      max-width:660px;
+    }
+
+    .stat{
+      min-height:118px;
+      padding:18px;
+      border-right:1px solid var(--red);
+      border-bottom:1px solid var(--red);
+      background:transparent;
+    }
+
+    .stat:nth-child(2),
+    .stat:nth-child(4){
+      border-right:0;
+    }
+
+    .stat:nth-child(3),
+    .stat:nth-child(4){
+      border-bottom:0;
+    }
+
+    .stat strong{
+      display:block;
+      font-size:19px;
+      line-height:1.05;
+      font-weight:700;
+      letter-spacing:-.035em;
+    }
+
+    .stat span{
+      display:block;
+      margin-top:10px;
+      color:var(--red);
+      font-size:12px;
+      font-weight:400;
+      line-height:1.32;
+      max-width:230px;
+    }
+
+    .hero-media{
+      display:grid;
+      grid-template-columns:150px minmax(0,1fr);
+      gap:18px;
+      align-items:end;
+    }
+
+    .video-side-text{
+      margin:0;
+      color:var(--red);
+      font-size:17px;
+      line-height:1.08;
+      font-weight:700;
+      letter-spacing:-.045em;
+      text-wrap:balance;
+    }
+
+    .hero-card{
+      border:1px solid var(--red);
+      background:transparent;
+      padding:10px;
+    }
+
+    .hero-card video{
+      width:100%;
+      aspect-ratio:16/9;
+      max-height:none;
+      object-fit:cover;
+      display:block;
+      background:#000;
+      border:1px solid var(--red);
+    }
+
+    section{
+      padding:64px 0;
+      border-top:1px solid var(--red);
+    }
+
+    .section-title{
+      max-width:760px;
+      margin-bottom:30px;
+    }
+
+    h2{
+      font-size:clamp(42px, 6vw, 82px);
+      line-height:.88;
+      font-weight:700;
+    }
+
+    .section-copy{
+      max-width:620px;
+      margin:16px 0 0;
+      color:var(--red);
+      font-size:14px;
+      font-weight:400;
+      line-height:1.55;
+    }
+
+    .category-list{
+      display:grid;
+      grid-template-columns:repeat(5,1fr);
+      gap:1px;
+      border:1px solid var(--red);
+      background:var(--red);
+    }
+
+    .cat{
+      min-height:160px;
+      padding:16px;
+      background:var(--pink);
+    }
+
+    .cat h3{
+      margin:0 0 10px;
+      font-size:22px;
+      line-height:.96;
+      font-weight:700;
+    }
+
+    .cat p{
+      margin:0;
+      color:var(--red);
+      font-size:13px;
+      line-height:1.45;
+      font-weight:400;
+    }
+
+    .filters{
+      display:flex;
+      gap:8px;
+      flex-wrap:wrap;
+      margin-bottom:24px;
+    }
+
+    .filter{
+      appearance:none;
+      cursor:pointer;
+      border:1px solid var(--red);
+      border-radius:999px;
+      background:transparent;
+      color:var(--red);
+      padding:9px 12px;
+      text-transform:uppercase;
+      font:700 11px Helvetica, Arial, sans-serif;
+      letter-spacing:.04em;
+    }
+
+    .filter.active,
+    .filter:hover{
+      background:var(--red);
+      color:var(--pink);
+    }
+
+    .grid{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:1px;
+      border:1px solid var(--red);
+      background:var(--red);
+    }
+
+    .project-card{
+      display:flex;
+      flex-direction:column;
+      min-height:100%;
+      background:var(--pink);
+      overflow:hidden;
+      transition:background .15s ease;
+    }
+
+    .project-card:hover{
+      background:var(--pink-strong);
+    }
+
+    .project-card.featured{
+      background:var(--pink);
+    }
+
+    .project-card.featured:hover{
+      background:var(--pink-strong);
+    }
+
+    .media-wrap{
+      position:relative;
+      background:#000;
+      border-bottom:1px solid var(--red);
+    }
+
+    .media-wrap video{
+      width:100%;
+      aspect-ratio:9/14;
+      object-fit:cover;
+      display:block;
+      background:#000;
+    }
+
+    .pill{
+      position:absolute;
+      top:10px;
+      left:10px;
+      background:var(--red);
+      color:var(--pink);
+      border-radius:999px;
+      padding:6px 9px;
+      text-transform:uppercase;
+      font-size:10px;
+      font-weight:700;
+      letter-spacing:.05em;
+    }
+
+    .project-body{
+      padding:17px;
+      display:flex;
+      flex-direction:column;
+      gap:10px;
+      flex:1;
+    }
+
+    .eyebrow{
+      margin:0;
+      color:var(--red);
+      text-transform:uppercase;
+      font-size:10px;
+      font-weight:700;
+      letter-spacing:.055em;
+    }
+
+    h3{
+      font-size:26px;
+      line-height:.96;
+      font-weight:700;
+    }
+
+    .project-body p{
+      margin:0;
+      color:var(--red);
+      font-size:13px;
+      font-weight:400;
+      line-height:1.45;
+    }
+
+    .role{
+      margin-top:auto!important;
+      padding-top:12px;
+      border-top:1px solid var(--red);
+      font-size:11px!important;
+      font-weight:700!important;
+      text-transform:uppercase;
+    }
+
+    .process{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:1px;
+      border:1px solid var(--red);
+      background:var(--red);
+    }
+
+    .process-card{
+      padding:22px;
+      min-height:190px;
+      background:var(--pink);
+    }
+
+    .process-card span{
+      display:inline-block;
+      margin-bottom:12px;
+      font-size:12px;
+      font-weight:700;
+      color:var(--red);
+    }
+
+    .process-card h3{
+      font-size:30px;
+      margin-bottom:12px;
+    }
+
+    .process-card p{
+      color:var(--red);
+      font-size:14px;
+      font-weight:400;
+      margin:0;
+    }
+
+    footer{
+      padding:64px 0 76px;
+      border-top:1px solid var(--red);
+    }
+
+    .footer-card{
+      background:var(--red);
+      color:var(--pink);
+      padding:34px;
+      border:1px solid var(--red);
+    }
+
+    .footer-card h2{
+      color:var(--pink);
+      font-size:clamp(42px, 6vw, 82px);
+    }
+
+    .footer-card p{
+      color:var(--pink);
+      max-width:640px;
+      font-size:16px;
+      font-weight:400;
+    }
+
+    .footer-card .btn{
+      border-color:var(--pink);
+      color:var(--pink);
+      background:transparent;
+    }
+
+    .footer-card .btn:hover,
+    .footer-card .btn.primary{
+      background:var(--pink);
+      color:var(--red);
+    }
+
+    .small{
+      font-size:12px!important;
+      margin-top:16px!important;
+      opacity:.88;
+    }
 
     @media (max-width:960px){
-      .hero-grid{grid-template-columns:1fr}
-      .grid{grid-template-columns:repeat(2,1fr)}
-      .stats{grid-template-columns:repeat(2,1fr)}
-      .stat:nth-child(2){border-right:0}.stat:nth-child(1),.stat:nth-child(2){border-bottom:1px solid var(--red)}
-      .category-list{grid-template-columns:repeat(2,1fr)}
-      .process{grid-template-columns:1fr}
+      .hero-grid{
+        grid-template-columns:1fr;
+      }
+
+      .hero-media{
+        grid-template-columns:1fr;
+      }
+
+      .grid{
+        grid-template-columns:repeat(2,1fr);
+      }
+
+      .stats{
+        grid-template-columns:repeat(2,1fr);
+      }
+
+      .category-list{
+        grid-template-columns:repeat(2,1fr);
+      }
+
+      .process{
+        grid-template-columns:1fr;
+      }
     }
+
     @media (max-width:640px){
-      .container{width:min(100% - 24px,1180px)}
-      header{position:relative}.topbar{align-items:flex-start; flex-direction:column}.hero{padding-top:44px}
-      .grid,.stats,.category-list{grid-template-columns:1fr}
-      .stat{border-right:0;border-bottom:1px solid var(--red)}.stat:last-child{border-bottom:0}
-      .hero-actions{flex-direction:column}.btn{width:100%}h1{font-size:clamp(48px, 18vw, 72px)}
+      .container{
+        width:min(100% - 24px,1180px);
+      }
+
+      header{
+        position:relative;
+      }
+
+      .topbar{
+        align-items:flex-start;
+        flex-direction:column;
+      }
+
+      .hero{
+        padding-top:44px;
+      }
+
+      h1{
+        font-size:clamp(46px, 17vw, 70px);
+      }
+
+      .grid,
+      .stats,
+      .category-list{
+        grid-template-columns:1fr;
+      }
+
+      .stat{
+        border-right:0;
+        border-bottom:1px solid var(--red);
+      }
+
+      .stat:last-child{
+        border-bottom:0;
+      }
+
+      .hero-actions{
+        flex-direction:column;
+      }
+
+      .btn{
+        width:100%;
+      }
+
+      .video-side-text{
+        font-size:18px;
+      }
     }
   </style>
 </head>
+
 <body>
   <header>
     <div class="container topbar">
@@ -160,42 +602,52 @@
     <section class="hero">
       <div class="container hero-grid">
         <div>
-          <p class="kicker"> Editando desde 2021 </p>
-          <h1>¿Listo para elevar tu contenido? </h1>
-          <p class="lead">Soy Emilia Mantese, realizadora y editora audiovisual. Trabajo piezas para redes, marcas, proyectos culturales y exploraciones personales con foco en ritmo, estética y narrativa.</p>
+          <p class="kicker">Editando desde 2021</p>
+
+          <h1>Editando contenido desde 2021, trabajemos juntos.</h1>
+
+          <p class="lead">
+            Soy Emilia Mantese, realizadora y editora audiovisual. Trabajo piezas para redes,
+            marcas, proyectos culturales y exploraciones personales con foco en ritmo, estética
+            y narrativa.
+          </p>
+
           <div class="hero-actions">
             <a class="btn primary" href="#trabajos">Ver trabajos seleccionados</a>
             <a class="btn" href="#contacto">Contactarme</a>
-          ```html
-<div class="stats">
-  <div class="stat">
-    <strong>Desde 2021</strong>
-    <span>Editando y creando contenido para redes, marcas y proyectos culturales.</span>
-  </div>
+          </div>
 
-  <div class="stat">
-    <strong>Contenido digital</strong>
-    <span>Reels, piezas verticales, videos de producto, promociones y lanzamientos.</span>
-  </div>
+          <div class="stats">
+            <div class="stat">
+              <strong>Desde 2021</strong>
+              <span>Editando y creando contenido para redes, marcas y proyectos culturales.</span>
+            </div>
 
-  <div class="stat">
-    <strong>Coberturas & eventos</strong>
-    <span>Registro de activaciones, espacios culturales, backstage y experiencias.</span>
-  </div>
+            <div class="stat">
+              <strong>Contenido digital</strong>
+              <span>Reels, piezas verticales, videos de producto, promociones y lanzamientos.</span>
+            </div>
 
-  <div class="stat">
-    <strong>Edición con mirada</strong>
-    <span>Ritmo, narrativa, color, recursos gráficos y adaptación a distintos formatos.</span>
-  </div>
-</div>
-```
+            <div class="stat">
+              <strong>Coberturas & eventos</strong>
+              <span>Registro de activaciones, espacios culturales, backstage y experiencias.</span>
+            </div>
+
+            <div class="stat">
+              <strong>Edición con mirada</strong>
+              <span>Ritmo, narrativa, color, recursos gráficos y adaptación a distintos formatos.</span>
+            </div>
           </div>
         </div>
-        <div class="hero-card">
-          <video controls preload="metadata" poster="assets/thumbs/00_showreel.jpg">
-            <source src="assets/videos/00_showreel_base_sin_musica.mp4" type="video/mp4">
-          </video>
-          <p class="hero-note">Showreel base sin música: pensado para sumar una pista propia y ajustar cortes finos.</p>
+
+        <div class="hero-media">
+          <p class="video-side-text">Echá un vistazo a mis más recientes trabajos.</p>
+
+          <div class="hero-card">
+            <video controls preload="metadata" poster="assets/thumbs/00_showreel.jpg">
+              <source src="assets/videos/00_showreel_base_sin_musica.mp4" type="video/mp4">
+            </video>
+          </div>
         </div>
       </div>
     </section>
@@ -204,14 +656,37 @@
       <div class="container">
         <div class="section-title">
           <h2>Enfoque</h2>
-          <p class="section-copy">Una forma de ordenar la variedad: clientes, cultura, redes, arquitectura, contenido editorial y una línea personal.</p>
+          <p class="section-copy">
+            Una forma de ordenar la variedad: clientes, cultura, redes, arquitectura,
+            contenido editorial y una línea personal.
+          </p>
         </div>
+
         <div class="category-list">
-          <div class="cat"><h3>Marcas & Producto</h3><p>Videos breves, visuales y comerciales para comunicar productos y experiencias.</p></div>
-          <div class="cat"><h3>Cultura & Eventos</h3><p>Coberturas y comunicación para espacios culturales, ciclos y activaciones.</p></div>
-          <div class="cat"><h3>Arquitectura</h3><p>Contenido educativo, transformaciones y piezas de valor para redes.</p></div>
-          <div class="cat"><h3>Editorial</h3><p>Videos con conducción, opinión, archivo y narrativa de creador de contenido.</p></div>
-          <div class="cat"><h3>Personal</h3><p>Trabajos autorales que muestran sensibilidad visual y búsqueda estética.</p></div>
+          <div class="cat">
+            <h3>Marcas & Producto</h3>
+            <p>Videos breves, visuales y comerciales para comunicar productos y experiencias.</p>
+          </div>
+
+          <div class="cat">
+            <h3>Cultura & Eventos</h3>
+            <p>Coberturas y comunicación para espacios culturales, ciclos y activaciones.</p>
+          </div>
+
+          <div class="cat">
+            <h3>Arquitectura</h3>
+            <p>Contenido educativo, transformaciones y piezas de valor para redes.</p>
+          </div>
+
+          <div class="cat">
+            <h3>Editorial</h3>
+            <p>Videos con conducción, opinión, archivo y narrativa de creador de contenido.</p>
+          </div>
+
+          <div class="cat">
+            <h3>Personal</h3>
+            <p>Trabajos autorales que muestran sensibilidad visual y búsqueda estética.</p>
+          </div>
         </div>
       </div>
     </section>
@@ -220,206 +695,230 @@
       <div class="container">
         <div class="section-title">
           <h2>Trabajos seleccionados</h2>
-          <p class="section-copy">Una selección de piezas comerciales, culturales, editoriales y personales.</p>
+          <p class="section-copy">
+            Una selección de piezas comerciales, culturales, editoriales y personales.
+          </p>
         </div>
-        <div class="filters"><button class="filter active" data-filter="all">Todo</button><button class="filter" data-filter="Marcas &amp; Producto">Marcas &amp; Producto</button><button class="filter" data-filter="Cultura &amp; Eventos">Cultura &amp; Eventos</button><button class="filter" data-filter="Arquitectura &amp; Contenido educativo">Arquitectura &amp; Contenido educativo</button><button class="filter" data-filter="Personal / Artístico">Personal / Artístico</button><button class="filter" data-filter="Editorial / Creator Content">Editorial / Creator Content</button></div>
+
+        <div class="filters">
+          <button class="filter active" data-filter="all">Todo</button>
+          <button class="filter" data-filter="Marcas &amp; Producto">Marcas &amp; Producto</button>
+          <button class="filter" data-filter="Cultura &amp; Eventos">Cultura &amp; Eventos</button>
+          <button class="filter" data-filter="Arquitectura &amp; Contenido educativo">Arquitectura &amp; Contenido educativo</button>
+          <button class="filter" data-filter="Personal / Artístico">Personal / Artístico</button>
+          <button class="filter" data-filter="Editorial / Creator Content">Editorial / Creator Content</button>
+        </div>
+
         <div class="grid" id="projectGrid">
-          
-    <article class="project-card featured" data-category="Marcas &amp; Producto">
-      <div class="media-wrap">
-        <video controls preload="metadata" poster="assets/thumbs/01_don-marcos-verano.jpg">
-          <source src="assets/videos/01_don-marcos-verano.mp4" type="video/mp4">
-        </video>
-        <span class="pill">Cliente / redes</span>
-      </div>
-      <div class="project-body">
-        <p class="eyebrow">Marcas &amp; Producto · Vertical · Redes sociales · 0:32</p>
-        <h3>Don Marcos — Verano</h3>
-        <p>Pieza promocional de temporada con estética cálida, foco en experiencia y consumo, pensada para comunicar clima de verano y lifestyle.</p>
-        <p class="role">Rol: realización / cámara / edición / color</p>
-      </div>
-    </article>
-    
-    <article class="project-card featured" data-category="Marcas &amp; Producto">
-      <div class="media-wrap">
-        <video controls preload="metadata" poster="assets/thumbs/02_conexion-picada.jpg">
-          <source src="assets/videos/02_conexion-picada.mp4" type="video/mp4">
-        </video>
-        <span class="pill">Producto / food</span>
-      </div>
-      <div class="project-body">
-        <p class="eyebrow">Marcas &amp; Producto · Vertical · Redes sociales · 0:20</p>
-        <h3>Conexión Natural — Picada saludable</h3>
-        <p>Contenido de producto con tono natural y comercial. Muestra ingredientes, textura y situación de consumo de forma simple y apetecible.</p>
-        <p class="role">Rol: realización / edición / color</p>
-      </div>
-    </article>
-    
-    <article class="project-card featured" data-category="Cultura &amp; Eventos">
-      <div class="media-wrap">
-        <video controls preload="metadata" poster="assets/thumbs/03_universo-evento.jpg">
-          <source src="assets/videos/03_universo-evento.mp4" type="video/mp4">
-        </video>
-        <span class="pill">Cobertura</span>
-      </div>
-      <div class="project-body">
-        <p class="eyebrow">Cultura &amp; Eventos · Vertical · Evento / activación · 1:11</p>
-        <h3>Universo — Cobertura de evento</h3>
-        <p>Cobertura dinámica de una participación institucional en evento. Combina registro de espacio, público, interacción y momentos de marca.</p>
-        <p class="role">Rol: cámara / edición / cobertura</p>
-      </div>
-    </article>
-    
-    <article class="project-card featured" data-category="Arquitectura &amp; Contenido educativo">
-      <div class="media-wrap">
-        <video controls preload="metadata" poster="assets/thumbs/04_eperspectiva-transformacion.jpg">
-          <source src="assets/videos/04_eperspectiva-transformacion.mp4" type="video/mp4">
-        </video>
-        <span class="pill">Arquitectura</span>
-      </div>
-      <div class="project-body">
-        <p class="eyebrow">Arquitectura &amp; Contenido educativo · Vertical · Antes / después · 0:37</p>
-        <h3> Estudio Perspectiva — Transformación de espacio</h3>
-        <p>Video breve orientado a mostrar una transformación visual de arquitectura/interiorismo, con lectura rápida y foco en el impacto del resultado.</p>
-        <p class="role">Rol: edición / armado visual / motion</p>
-      </div>
-    </article>
-    
-    <article class="project-card featured" data-category="Arquitectura &amp; Contenido educativo">
-      <div class="media-wrap">
-        <video controls preload="metadata" poster="assets/thumbs/05_eperspectiva-cocina.jpg">
-          <source src="assets/videos/05_eperspectiva-cocina.mp4" type="video/mp4">
-        </video>
-        <span class="pill">Educativo / redes</span>
-      </div>
-      <div class="project-body">
-        <p class="eyebrow">Arquitectura &amp; Contenido educativo · Vertical · Tips / contenido de valor · 0:55</p>
-        <h3>ePerspectiva — 5 tips para tu cocina</h3>
-        <p>Pieza educativa de redes: organiza información en formato de tips, combinando presencia en cámara, recursos gráficos y ritmo de edición.</p>
-        <p class="role">Rol: edición / guion / cámara / motion</p>
-      </div>
-    </article>
-    
-    <article class="project-card featured" data-category="Cultura &amp; Eventos">
-      <div class="media-wrap">
-        <video controls preload="metadata" poster="assets/thumbs/06_cine-boutique-marzo.jpg">
-          <source src="assets/videos/06_cine-boutique-marzo.mp4" type="video/mp4">
-        </video>
-        <span class="pill">Cultura / agenda</span>
-      </div>
-      <div class="project-body">
-        <p class="eyebrow">Cultura &amp; Eventos · Vertical · Comunicación cultural · 0:56</p>
-        <h3>Cine Boutique — Ciclo Mirada Femenina</h3>
-        <p>Video de comunicación cultural para anunciar programación. Combina información de agenda, tono cercano y estética acorde al espacio.</p>
-        <p class="role">Rol: realización / edición / comunicación</p>
-      </div>
-    </article>
-    
-    <article class="project-card featured" data-category="Marcas &amp; Producto">
-      <div class="media-wrap">
-        <video controls preload="metadata" poster="assets/thumbs/07_malta-caramelo.jpg">
-          <source src="assets/videos/07_malta-caramelo.mp4" type="video/mp4">
-        </video>
-        <span class="pill">Moda / backstage</span>
-      </div>
-      <div class="project-body">
-        <p class="eyebrow">Marcas &amp; Producto · Horizontal · Recorte visual · 0:13</p>
-        <h3>Malta Caramelo — Backstage sesión de fotos</h3>
-        <p>Registro de backstage con estética en blanco y negro, pensado para mostrar proceso, clima de producción y sensibilidad visual.</p>
-        <p class="role">Rol: cámara / edición</p>
-      </div>
-    </article>
-    
-    <article class="project-card featured" data-category="Personal / Artístico">
-      <div class="media-wrap">
-        <video controls preload="metadata" poster="assets/thumbs/08_disociados.jpg">
-          <source src="assets/videos/08_disociados.mp4" type="video/mp4">
-        </video>
-        <span class="pill">Autoral</span>
-      </div>
-      <div class="project-body">
-        <p class="eyebrow">Personal / Artístico · Horizontal · Pieza personal · 1:53</p>
-        <h3>Disociados</h3>
-        <p>Trabajo personal de búsqueda estética y narrativa. Funciona como cierre autoral dentro del portfolio para mostrar mirada propia.</p>
-        <p class="role">Rol: dirección / cámara / edición / idea</p>
-      </div>
-    </article>
-    
-    <article class="project-card" data-category="Marcas &amp; Producto">
-      <div class="media-wrap">
-        <video controls preload="metadata" poster="assets/thumbs/09_conexion-yerba.jpg">
-          <source src="assets/videos/09_conexion-yerba.mp4" type="video/mp4">
-        </video>
-        <span class="pill">Producto / natural</span>
-      </div>
-      <div class="project-body">
-        <p class="eyebrow">Marcas &amp; Producto · Vertical · Redes sociales · 0:09</p>
-        <h3>Conexión Natural — Yerba orgánica</h3>
-        <p>Pieza breve de producto con foco en atributos naturales y consumo cotidiano. Ideal como complemento de la línea de contenidos de marca.</p>
-        <p class="role">Rol: realización / edición</p>
-      </div>
-    </article>
-    
-    <article class="project-card" data-category="Cultura &amp; Eventos">
-      <div class="media-wrap">
-        <video controls preload="metadata" poster="assets/thumbs/10_cine-boutique-otono.jpg">
-          <source src="assets/videos/10_cine-boutique-otono.mp4" type="video/mp4">
-        </video>
-        <span class="pill">Experiencia</span>
-      </div>
-      <div class="project-body">
-        <p class="eyebrow">Cultura &amp; Eventos · Vertical · Lifestyle cultural · 0:31</p>
-        <h3>Cine Boutique — Experiencia Otoño</h3>
-        <p>Contenido breve para sostener comunidad y comunicar una experiencia cultural con tono cálido, cercano y de pertenencia.</p>
-        <p class="role">Rol: realización / edición</p>
-      </div>
-    </article>
-    
-    <article class="project-card" data-category="Editorial / Creator Content">
-      <div class="media-wrap">
-        <video controls preload="metadata" poster="assets/thumbs/11_momento-historico.jpg">
-          <source src="assets/videos/11_momento-historico.mp4" type="video/mp4">
-        </video>
-        <span class="pill">Archivo / relato</span>
-      </div>
-      <div class="project-body">
-        <p class="eyebrow">Editorial / Creator Content · Vertical · Contenido editorial · 2:27</p>
-        <h3>Comentario editorial — Momento televisivo histórico</h3>
-        <p>Contenido de análisis y narración apoyado en material de archivo. Muestra capacidad para construir relato y opinión en formato redes.</p>
-        <p class="role">Rol: guion / edición / locución / conducción</p>
-      </div>
-    </article>
-    
-    <article class="project-card" data-category="Editorial / Creator Content">
-      <div class="media-wrap">
-        <video controls preload="metadata" poster="assets/thumbs/12_resena-pelicula.jpg">
-          <source src="assets/videos/12_resena-pelicula.mp4" type="video/mp4">
-        </video>
-        <span class="pill">Cine / opinión</span>
-      </div>
-      <div class="project-body">
-        <p class="eyebrow">Editorial / Creator Content · Horizontal · Reseña audiovisual · 3:22</p>
-        <h3>Reseña / comentario de película</h3>
-        <p>Pieza de opinión cinematográfica con presencia en cámara. Aporta una línea más editorial y de creador de contenido.</p>
-        <p class="role">Rol: conducción / guion / edición</p>
-      </div>
-    </article>
-    
-    <article class="project-card" data-category="Editorial / Creator Content">
-      <div class="media-wrap">
-        <video controls preload="metadata" poster="assets/thumbs/13_dune-reaccion.jpg">
-          <source src="assets/videos/13_dune-reaccion.mp4" type="video/mp4">
-        </video>
-        <span class="pill">Reacción / cine</span>
-      </div>
-      <div class="project-body">
-        <p class="eyebrow">Editorial / Creator Content · Vertical · Creator content · 3:39</p>
-        <h3>Dune — Reacción a tráiler</h3>
-        <p>Contenido de reacción y comentario para redes. Funciona como muestra de ritmo conversacional, presencia en cámara y edición de formato largo/corto.</p>
-        <p class="role">Rol: conducción / edición</p>
-      </div>
-    </article>
-    
+
+          <article class="project-card featured" data-category="Marcas &amp; Producto">
+            <div class="media-wrap">
+              <video controls preload="metadata" poster="assets/thumbs/01_don-marcos-verano.jpg">
+                <source src="assets/videos/01_don-marcos-verano.mp4" type="video/mp4">
+              </video>
+              <span class="pill">Cliente / redes</span>
+            </div>
+
+            <div class="project-body">
+              <p class="eyebrow">Marcas & Producto · Vertical · Redes sociales · 0:32</p>
+              <h3>Don Marcos — Verano</h3>
+              <p>Pieza promocional de temporada con estética cálida, foco en experiencia y consumo, pensada para comunicar clima de verano y lifestyle.</p>
+              <p class="role">Rol: realización / cámara / edición / color</p>
+            </div>
+          </article>
+
+          <article class="project-card featured" data-category="Marcas &amp; Producto">
+            <div class="media-wrap">
+              <video controls preload="metadata" poster="assets/thumbs/02_conexion-picada.jpg">
+                <source src="assets/videos/02_conexion-picada.mp4" type="video/mp4">
+              </video>
+              <span class="pill">Producto / food</span>
+            </div>
+
+            <div class="project-body">
+              <p class="eyebrow">Marcas & Producto · Vertical · Redes sociales · 0:20</p>
+              <h3>Conexión Natural — Picada saludable</h3>
+              <p>Contenido de producto con tono natural y comercial. Muestra ingredientes, textura y situación de consumo de forma simple y apetecible.</p>
+              <p class="role">Rol: realización / edición / color</p>
+            </div>
+          </article>
+
+          <article class="project-card featured" data-category="Cultura &amp; Eventos">
+            <div class="media-wrap">
+              <video controls preload="metadata" poster="assets/thumbs/03_universo-evento.jpg">
+                <source src="assets/videos/03_universo-evento.mp4" type="video/mp4">
+              </video>
+              <span class="pill">Cobertura</span>
+            </div>
+
+            <div class="project-body">
+              <p class="eyebrow">Cultura & Eventos · Vertical · Evento / activación · 1:11</p>
+              <h3>Universo — Cobertura de evento</h3>
+              <p>Cobertura dinámica de una participación institucional en evento. Combina registro de espacio, público, interacción y momentos de marca.</p>
+              <p class="role">Rol: cámara / edición / cobertura</p>
+            </div>
+          </article>
+
+          <article class="project-card featured" data-category="Arquitectura &amp; Contenido educativo">
+            <div class="media-wrap">
+              <video controls preload="metadata" poster="assets/thumbs/04_eperspectiva-transformacion.jpg">
+                <source src="assets/videos/04_eperspectiva-transformacion.mp4" type="video/mp4">
+              </video>
+              <span class="pill">Arquitectura</span>
+            </div>
+
+            <div class="project-body">
+              <p class="eyebrow">Arquitectura & Contenido educativo · Vertical · Antes / después · 0:37</p>
+              <h3>Estudio Perspectiva — Transformación de espacio</h3>
+              <p>Video breve orientado a mostrar una transformación visual de arquitectura/interiorismo, con lectura rápida y foco en el impacto del resultado.</p>
+              <p class="role">Rol: edición / armado visual / motion</p>
+            </div>
+          </article>
+
+          <article class="project-card featured" data-category="Arquitectura &amp; Contenido educativo">
+            <div class="media-wrap">
+              <video controls preload="metadata" poster="assets/thumbs/05_eperspectiva-cocina.jpg">
+                <source src="assets/videos/05_eperspectiva-cocina.mp4" type="video/mp4">
+              </video>
+              <span class="pill">Educativo / redes</span>
+            </div>
+
+            <div class="project-body">
+              <p class="eyebrow">Arquitectura & Contenido educativo · Vertical · Tips / contenido de valor · 0:55</p>
+              <h3>ePerspectiva — 5 tips para tu cocina</h3>
+              <p>Pieza educativa de redes: organiza información en formato de tips, combinando presencia en cámara, recursos gráficos y ritmo de edición.</p>
+              <p class="role">Rol: edición / guion / cámara / motion</p>
+            </div>
+          </article>
+
+          <article class="project-card featured" data-category="Cultura &amp; Eventos">
+            <div class="media-wrap">
+              <video controls preload="metadata" poster="assets/thumbs/06_cine-boutique-marzo.jpg">
+                <source src="assets/videos/06_cine-boutique-marzo.mp4" type="video/mp4">
+              </video>
+              <span class="pill">Cultura / agenda</span>
+            </div>
+
+            <div class="project-body">
+              <p class="eyebrow">Cultura & Eventos · Vertical · Comunicación cultural · 0:56</p>
+              <h3>Cine Boutique — Ciclo Mirada Femenina</h3>
+              <p>Video de comunicación cultural para anunciar programación. Combina información de agenda, tono cercano y estética acorde al espacio.</p>
+              <p class="role">Rol: realización / edición / comunicación</p>
+            </div>
+          </article>
+
+          <article class="project-card featured" data-category="Marcas &amp; Producto">
+            <div class="media-wrap">
+              <video controls preload="metadata" poster="assets/thumbs/07_malta-caramelo.jpg">
+                <source src="assets/videos/07_malta-caramelo.mp4" type="video/mp4">
+              </video>
+              <span class="pill">Moda / backstage</span>
+            </div>
+
+            <div class="project-body">
+              <p class="eyebrow">Marcas & Producto · Horizontal · Recorte visual · 0:13</p>
+              <h3>Malta Caramelo — Backstage sesión de fotos</h3>
+              <p>Registro de backstage con estética en blanco y negro, pensado para mostrar proceso, clima de producción y sensibilidad visual.</p>
+              <p class="role">Rol: cámara / edición</p>
+            </div>
+          </article>
+
+          <article class="project-card featured" data-category="Personal / Artístico">
+            <div class="media-wrap">
+              <video controls preload="metadata" poster="assets/thumbs/08_disociados.jpg">
+                <source src="assets/videos/08_disociados.mp4" type="video/mp4">
+              </video>
+              <span class="pill">Autoral</span>
+            </div>
+
+            <div class="project-body">
+              <p class="eyebrow">Personal / Artístico · Horizontal · Pieza personal · 1:53</p>
+              <h3>Disociados</h3>
+              <p>Trabajo personal de búsqueda estética y narrativa. Funciona como cierre autoral dentro del portfolio para mostrar mirada propia.</p>
+              <p class="role">Rol: dirección / cámara / edición / idea</p>
+            </div>
+          </article>
+
+          <article class="project-card" data-category="Marcas &amp; Producto">
+            <div class="media-wrap">
+              <video controls preload="metadata" poster="assets/thumbs/09_conexion-yerba.jpg">
+                <source src="assets/videos/09_conexion-yerba.mp4" type="video/mp4">
+              </video>
+              <span class="pill">Producto / natural</span>
+            </div>
+
+            <div class="project-body">
+              <p class="eyebrow">Marcas & Producto · Vertical · Redes sociales · 0:09</p>
+              <h3>Conexión Natural — Yerba orgánica</h3>
+              <p>Pieza breve de producto con foco en atributos naturales y consumo cotidiano. Ideal como complemento de la línea de contenidos de marca.</p>
+              <p class="role">Rol: realización / edición</p>
+            </div>
+          </article>
+
+          <article class="project-card" data-category="Cultura &amp; Eventos">
+            <div class="media-wrap">
+              <video controls preload="metadata" poster="assets/thumbs/10_cine-boutique-otono.jpg">
+                <source src="assets/videos/10_cine-boutique-otono.mp4" type="video/mp4">
+              </video>
+              <span class="pill">Experiencia</span>
+            </div>
+
+            <div class="project-body">
+              <p class="eyebrow">Cultura & Eventos · Vertical · Lifestyle cultural · 0:31</p>
+              <h3>Cine Boutique — Experiencia Otoño</h3>
+              <p>Contenido breve para sostener comunidad y comunicar una experiencia cultural con tono cálido, cercano y de pertenencia.</p>
+              <p class="role">Rol: realización / edición</p>
+            </div>
+          </article>
+
+          <article class="project-card" data-category="Editorial / Creator Content">
+            <div class="media-wrap">
+              <video controls preload="metadata" poster="assets/thumbs/11_momento-historico.jpg">
+                <source src="assets/videos/11_momento-historico.mp4" type="video/mp4">
+              </video>
+              <span class="pill">Archivo / relato</span>
+            </div>
+
+            <div class="project-body">
+              <p class="eyebrow">Editorial / Creator Content · Vertical · Contenido editorial · 2:27</p>
+              <h3>Comentario editorial — Momento televisivo histórico</h3>
+              <p>Contenido de análisis y narración apoyado en material de archivo. Muestra capacidad para construir relato y opinión en formato redes.</p>
+              <p class="role">Rol: guion / edición / locución / conducción</p>
+            </div>
+          </article>
+
+          <article class="project-card" data-category="Editorial / Creator Content">
+            <div class="media-wrap">
+              <video controls preload="metadata" poster="assets/thumbs/12_resena-pelicula.jpg">
+                <source src="assets/videos/12_resena-pelicula.mp4" type="video/mp4">
+              </video>
+              <span class="pill">Cine / opinión</span>
+            </div>
+
+            <div class="project-body">
+              <p class="eyebrow">Editorial / Creator Content · Horizontal · Reseña audiovisual · 3:22</p>
+              <h3>Reseña / comentario de película</h3>
+              <p>Pieza de opinión cinematográfica con presencia en cámara. Aporta una línea más editorial y de creador de contenido.</p>
+              <p class="role">Rol: conducción / guion / edición</p>
+            </div>
+          </article>
+
+          <article class="project-card" data-category="Editorial / Creator Content">
+            <div class="media-wrap">
+              <video controls preload="metadata" poster="assets/thumbs/13_dune-reaccion.jpg">
+                <source src="assets/videos/13_dune-reaccion.mp4" type="video/mp4">
+              </video>
+              <span class="pill">Reacción / cine</span>
+            </div>
+
+            <div class="project-body">
+              <p class="eyebrow">Editorial / Creator Content · Vertical · Creator content · 3:39</p>
+              <h3>Dune — Reacción a tráiler</h3>
+              <p>Contenido de reacción y comentario para redes. Funciona como muestra de ritmo conversacional, presencia en cámara y edición de formato largo/corto.</p>
+              <p class="role">Rol: conducción / edición</p>
+            </div>
+          </article>
+
         </div>
       </div>
     </section>
@@ -428,12 +927,29 @@
       <div class="container">
         <div class="section-title">
           <h2>Servicios posibles</h2>
-          <p class="section-copy">Formatos que puedo desarrollar para marcas, proyectos culturales y creadores.</p>
+          <p class="section-copy">
+            Formatos que puedo desarrollar para marcas, proyectos culturales y creadores.
+          </p>
         </div>
+
         <div class="process">
-          <div class="process-card"><span>01</span><h3>Contenido para redes</h3><p>Reels, piezas verticales, videos de producto, promociones, lanzamientos y contenido de marca.</p></div>
-          <div class="process-card"><span>02</span><h3>Cobertura audiovisual</h3><p>Eventos, activaciones, espacios culturales, backstage y registro de experiencias.</p></div>
-          <div class="process-card"><span>03</span><h3>Edición & narrativa</h3><p>Selección de material, ritmo, estructura, recursos gráficos y adaptación a formatos digitales.</p></div>
+          <div class="process-card">
+            <span>01</span>
+            <h3>Contenido para redes</h3>
+            <p>Reels, piezas verticales, videos de producto, promociones, lanzamientos y contenido de marca.</p>
+          </div>
+
+          <div class="process-card">
+            <span>02</span>
+            <h3>Cobertura audiovisual</h3>
+            <p>Eventos, activaciones, espacios culturales, backstage y registro de experiencias.</p>
+          </div>
+
+          <div class="process-card">
+            <span>03</span>
+            <h3>Edición & narrativa</h3>
+            <p>Selección de material, ritmo, estructura, recursos gráficos y adaptación a formatos digitales.</p>
+          </div>
         </div>
       </div>
     </section>
@@ -444,15 +960,18 @@
       <div class="footer-card">
         <div>
           <h2>Hagamos algo juntos.</h2>
+
           <p>
             Soy Emilia Mantese, realizadora y editora audiovisual. Estoy disponible para videos comerciales,
             coberturas, edición, contenido digital y proyectos audiovisuales con identidad propia.
           </p>
+
           <div class="hero-actions">
             <a class="btn primary" href="mailto:emiliamantese1@gmail.com">emiliamantese1@gmail.com</a>
             <a class="btn" href="https://www.instagram.com/emilia.mantese/" target="_blank" rel="noopener">@emilia.mantese</a>
             <a class="btn" href="https://wa.me/5493424405349" target="_blank" rel="noopener">WhatsApp</a>
           </div>
+
           <p class="small">Santa Fe, Argentina · Disponible para proyectos y colaboraciones.</p>
         </div>
       </div>
@@ -462,10 +981,13 @@
   <script>
     const buttons = document.querySelectorAll('.filter');
     const cards = document.querySelectorAll('.project-card');
+
     buttons.forEach(btn => btn.addEventListener('click', () => {
       buttons.forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
+
       const filter = btn.dataset.filter;
+
       cards.forEach(card => {
         const show = filter === 'all' || card.dataset.category === filter;
         card.style.display = show ? 'flex' : 'none';
@@ -474,3 +996,4 @@
   </script>
 </body>
 </html>
+```
