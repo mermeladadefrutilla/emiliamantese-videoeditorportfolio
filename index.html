@@ -1,4 +1,5 @@
 <!doctype html>
+
 <html lang="es">
 <head>
   <meta charset="utf-8" />
@@ -102,12 +103,7 @@
       font-weight:400;
     }
 
-  .hero-media{
-  display:grid;
-  grid-template-columns:1fr;
-  gap:15px;
-  align-items:start;
-}
+    .hero-actions{display:flex; gap:10px; flex-wrap:wrap; margin-top:34px}
 
     .btn{
       display:inline-flex;
@@ -132,29 +128,33 @@
     .btn.primary:hover{transform:translateY(-1px)}
 
     .hero-media{
-      display:grid;
-      grid-template-columns:150px minmax(0,1fr);
-      gap:18px;
-      align-items:end;
+      display:flex !important;
+      flex-direction:column !important;
+      gap:15px !important;
+      align-items:stretch !important;
+      width:100% !important;
     }
 
     .video-side-text{
-      margin:0;
+      margin:0 !important;
       font-size:17px;
       line-height:1.08;
       font-weight:700;
       letter-spacing:-.045em;
       text-wrap:balance;
+      order:2;
     }
 
     .hero-card{
       border:1px solid var(--red);
       background:transparent;
       padding:10px;
+      width:100% !important;
+      order:1;
     }
 
     .hero-card video{
-      width:100%;
+      width:100% !important;
       aspect-ratio:16/9;
       display:block;
       object-fit:cover;
@@ -290,7 +290,7 @@
     .small{font-size:12px!important; margin-top:16px!important; opacity:.88}
 
     @media (max-width:960px){
-      .hero-grid,.hero-media{grid-template-columns:1fr}
+      .hero-grid{grid-template-columns:1fr}
       .grid{grid-template-columns:repeat(2,1fr)}
       .experience{grid-template-columns:repeat(2,1fr)}
       .category-list{grid-template-columns:repeat(2,1fr)}
@@ -308,33 +308,8 @@
       .btn{width:100%}
       .video-side-text{font-size:18px}
     }
-    /* FIX FINAL: video arriba + texto debajo */
-.hero-media{
-  display:flex !important;
-  flex-direction:column !important;
-  gap:15px !important;
-  align-items:stretch !important;
-}
-
-.hero-media .hero-card{
-  width:100% !important;
-  order:1 !important;
-}
-
-.hero-media .video-side-text{
-  order:2 !important;
-  margin:0 !important;
-  max-width:100% !important;
-  font-size:17px !important;
-  line-height:1.1 !important;
-}
-
-.hero-media .hero-card video{
-  width:100% !important;
-  aspect-ratio:16/9 !important;
-  display:block !important;
-}
   </style>
+
 </head>
 
 <body>
@@ -363,87 +338,92 @@
             </div>
           </div>
 
-    <div class="hero-media">
-  <div class="hero-card">
-    <video controls preload="metadata" poster="assets/thumbs/portada-reel-emilia-v2.jpg?v=2">
-      <source src="assets/videos/reel-inicial-emilia-v2.mp4?v=2" type="video/mp4">
-    </video>
+```
+      <div class="hero-media" style="display:flex !important; flex-direction:column !important; gap:15px !important; align-items:stretch !important; width:100% !important;">
+        <div class="hero-card" style="width:100% !important;">
+          <video controls preload="metadata" poster="assets/thumbs/portada-reel-emilia-v2.jpg?v=2" style="width:100% !important; aspect-ratio:16/9 !important; display:block !important; object-fit:cover !important;">
+            <source src="assets/videos/reel-inicial-emilia-v2.mp4?v=2" type="video/mp4">
+          </video>
+        </div>
+
+        <p class="video-side-text">Echá un vistazo a mis más recientes trabajos.</p>
+      </div>
+    </div>
+
+    <div class="experience">
+      <div class="experience-item"><strong>Desde 2021</strong><span>Editando y creando contenido para redes, marcas y proyectos culturales.</span></div>
+      <div class="experience-item"><strong>Contenido digital</strong><span>Reels, piezas verticales, videos de producto, promociones y lanzamientos.</span></div>
+      <div class="experience-item"><strong>Coberturas & eventos</strong><span>Registro de activaciones, espacios culturales, backstage y experiencias.</span></div>
+      <div class="experience-item"><strong>Edición con mirada</strong><span>Ritmo, narrativa, color, recursos gráficos y adaptación a distintos formatos.</span></div>
+    </div>
   </div>
+</section>
 
-  <p class="video-side-text">Echá un vistazo a mis más recientes trabajos.</p>
-</div>
-        <div class="experience">
-          <div class="experience-item"><strong>Desde 2021</strong><span>Editando y creando contenido para redes, marcas y proyectos culturales.</span></div>
-          <div class="experience-item"><strong>Contenido digital</strong><span>Reels, piezas verticales, videos de producto, promociones y lanzamientos.</span></div>
-          <div class="experience-item"><strong>Coberturas & eventos</strong><span>Registro de activaciones, espacios culturales, backstage y experiencias.</span></div>
-          <div class="experience-item"><strong>Edición con mirada</strong><span>Ritmo, narrativa, color, recursos gráficos y adaptación a distintos formatos.</span></div>
-        </div>
-      </div>
-    </section>
+<section id="enfoque">
+  <div class="container">
+    <div class="section-title">
+      <h2>Enfoque</h2>
+      <p class="section-copy">Una forma de ordenar la variedad: clientes, cultura, redes, arquitectura, contenido editorial y una línea personal.</p>
+    </div>
+    <div class="category-list">
+      <div class="cat"><h3>Marcas & Producto</h3><p>Videos breves, visuales y comerciales para comunicar productos y experiencias.</p></div>
+      <div class="cat"><h3>Cultura & Eventos</h3><p>Coberturas y comunicación para espacios culturales, ciclos y activaciones.</p></div>
+      <div class="cat"><h3>Arquitectura</h3><p>Contenido educativo, transformaciones y piezas de valor para redes.</p></div>
+      <div class="cat"><h3>Editorial</h3><p>Videos con conducción, opinión, archivo y narrativa de creadora de contenido.</p></div>
+      <div class="cat"><h3>Personal</h3><p>Trabajos autorales que muestran sensibilidad visual y búsqueda estética.</p></div>
+    </div>
+  </div>
+</section>
 
-    <section id="enfoque">
-      <div class="container">
-        <div class="section-title">
-          <h2>Enfoque</h2>
-          <p class="section-copy">Una forma de ordenar la variedad: clientes, cultura, redes, arquitectura, contenido editorial y una línea personal.</p>
-        </div>
-        <div class="category-list">
-          <div class="cat"><h3>Marcas & Producto</h3><p>Videos breves, visuales y comerciales para comunicar productos y experiencias.</p></div>
-          <div class="cat"><h3>Cultura & Eventos</h3><p>Coberturas y comunicación para espacios culturales, ciclos y activaciones.</p></div>
-          <div class="cat"><h3>Arquitectura</h3><p>Contenido educativo, transformaciones y piezas de valor para redes.</p></div>
-          <div class="cat"><h3>Editorial</h3><p>Videos con conducción, opinión, archivo y narrativa de creadora de contenido.</p></div>
-          <div class="cat"><h3>Personal</h3><p>Trabajos autorales que muestran sensibilidad visual y búsqueda estética.</p></div>
-        </div>
-      </div>
-    </section>
+<section id="trabajos">
+  <div class="container">
+    <div class="section-title">
+      <h2>Trabajos seleccionados</h2>
+      <p class="section-copy">Una selección de piezas comerciales, culturales, editoriales y personales.</p>
+    </div>
 
-    <section id="trabajos">
-      <div class="container">
-        <div class="section-title">
-          <h2>Trabajos seleccionados</h2>
-          <p class="section-copy">Una selección de piezas comerciales, culturales, editoriales y personales.</p>
-        </div>
+    <div class="filters">
+      <button class="filter active" data-filter="all">Todo</button>
+      <button class="filter" data-filter="Marcas &amp; Producto">Marcas &amp; Producto</button>
+      <button class="filter" data-filter="Cultura &amp; Eventos">Cultura &amp; Eventos</button>
+      <button class="filter" data-filter="Arquitectura &amp; Contenido educativo">Arquitectura</button>
+      <button class="filter" data-filter="Personal / Artístico">Personal</button>
+      <button class="filter" data-filter="Editorial / Creator Content">Editorial</button>
+    </div>
 
-        <div class="filters">
-          <button class="filter active" data-filter="all">Todo</button>
-          <button class="filter" data-filter="Marcas &amp; Producto">Marcas &amp; Producto</button>
-          <button class="filter" data-filter="Cultura &amp; Eventos">Cultura &amp; Eventos</button>
-          <button class="filter" data-filter="Arquitectura &amp; Contenido educativo">Arquitectura</button>
-          <button class="filter" data-filter="Personal / Artístico">Personal</button>
-          <button class="filter" data-filter="Editorial / Creator Content">Editorial</button>
-        </div>
+    <div class="grid" id="projectGrid">
+      <article class="project-card" data-category="Marcas &amp; Producto"><div class="media-wrap"><video controls preload="metadata" poster="assets/thumbs/01_don-marcos-verano.jpg"><source src="assets/videos/01_don-marcos-verano.mp4" type="video/mp4"></video><span class="pill">Cliente / redes</span></div><div class="project-body"><p class="eyebrow">Marcas & Producto · Vertical · Redes sociales · 0:32</p><h3>Don Marcos — Verano</h3><p>Pieza promocional de temporada con estética cálida, foco en experiencia y consumo, pensada para comunicar clima de verano y lifestyle.</p><p class="role">Rol: realización / cámara / edición / color</p></div></article>
+      <article class="project-card" data-category="Marcas &amp; Producto"><div class="media-wrap"><video controls preload="metadata" poster="assets/thumbs/02_conexion-picada.jpg"><source src="assets/videos/02_conexion-picada.mp4" type="video/mp4"></video><span class="pill">Producto / food</span></div><div class="project-body"><p class="eyebrow">Marcas & Producto · Vertical · Redes sociales · 0:20</p><h3>Conexión Natural — Picada saludable</h3><p>Contenido de producto con tono natural y comercial. Muestra ingredientes, textura y situación de consumo de forma simple y apetecible.</p><p class="role">Rol: realización / edición / color</p></div></article>
+      <article class="project-card" data-category="Cultura &amp; Eventos"><div class="media-wrap"><video controls preload="metadata" poster="assets/thumbs/03_universo-evento.jpg"><source src="assets/videos/03_universo-evento.mp4" type="video/mp4"></video><span class="pill">Cobertura</span></div><div class="project-body"><p class="eyebrow">Cultura & Eventos · Vertical · Evento / activación · 1:11</p><h3>Universo — Cobertura de evento</h3><p>Cobertura dinámica de una participación institucional en evento. Combina registro de espacio, público, interacción y momentos de marca.</p><p class="role">Rol: cámara / edición / cobertura</p></div></article>
+      <article class="project-card" data-category="Arquitectura &amp; Contenido educativo"><div class="media-wrap"><video controls preload="metadata" poster="assets/thumbs/04_eperspectiva-transformacion.jpg"><source src="assets/videos/04_eperspectiva-transformacion.mp4" type="video/mp4"></video><span class="pill">Arquitectura</span></div><div class="project-body"><p class="eyebrow">Arquitectura & Contenido educativo · Vertical · Antes / después · 0:37</p><h3>Estudio Perspectiva — Transformación de espacio</h3><p>Video breve orientado a mostrar una transformación visual de arquitectura/interiorismo, con lectura rápida y foco en el impacto del resultado.</p><p class="role">Rol: edición / armado visual / motion</p></div></article>
+      <article class="project-card" data-category="Arquitectura &amp; Contenido educativo"><div class="media-wrap"><video controls preload="metadata" poster="assets/thumbs/05_eperspectiva-cocina.jpg"><source src="assets/videos/05_eperspectiva-cocina.mp4" type="video/mp4"></video><span class="pill">Educativo / redes</span></div><div class="project-body"><p class="eyebrow">Arquitectura & Contenido educativo · Vertical · Tips / contenido de valor · 0:55</p><h3>ePerspectiva — 5 tips para tu cocina</h3><p>Pieza educativa de redes: organiza información en formato de tips, combinando presencia en cámara, recursos gráficos y ritmo de edición.</p><p class="role">Rol: edición / guion / cámara / motion</p></div></article>
+      <article class="project-card" data-category="Cultura &amp; Eventos"><div class="media-wrap"><video controls preload="metadata" poster="assets/thumbs/06_cine-boutique-marzo.jpg"><source src="assets/videos/06_cine-boutique-marzo.mp4" type="video/mp4"></video><span class="pill">Cultura / agenda</span></div><div class="project-body"><p class="eyebrow">Cultura & Eventos · Vertical · Comunicación cultural · 0:56</p><h3>Cine Boutique — Ciclo Mirada Femenina</h3><p>Video de comunicación cultural para anunciar programación. Combina información de agenda, tono cercano y estética acorde al espacio.</p><p class="role">Rol: realización / edición / comunicación</p></div></article>
+      <article class="project-card" data-category="Marcas &amp; Producto"><div class="media-wrap"><video controls preload="metadata" poster="assets/thumbs/07_malta-caramelo.jpg"><source src="assets/videos/07_malta-caramelo.mp4" type="video/mp4"></video><span class="pill">Moda / backstage</span></div><div class="project-body"><p class="eyebrow">Marcas & Producto · Horizontal · Recorte visual · 0:13</p><h3>Malta Caramelo — Backstage sesión de fotos</h3><p>Registro de backstage con estética en blanco y negro, pensado para mostrar proceso, clima de producción y sensibilidad visual.</p><p class="role">Rol: cámara / edición</p></div></article>
+      <article class="project-card" data-category="Personal / Artístico"><div class="media-wrap"><video controls preload="metadata" poster="assets/thumbs/08_disociados.jpg"><source src="assets/videos/08_disociados.mp4" type="video/mp4"></video><span class="pill">Autoral</span></div><div class="project-body"><p class="eyebrow">Personal / Artístico · Horizontal · Pieza personal · 1:53</p><h3>Disociados</h3><p>Trabajo personal de búsqueda estética y narrativa. Funciona como cierre autoral dentro del portfolio para mostrar mirada propia.</p><p class="role">Rol: dirección / cámara / edición / idea</p></div></article>
+      <article class="project-card" data-category="Marcas &amp; Producto"><div class="media-wrap"><video controls preload="metadata" poster="assets/thumbs/09_conexion-yerba.jpg"><source src="assets/videos/09_conexion-yerba.mp4" type="video/mp4"></video><span class="pill">Producto / natural</span></div><div class="project-body"><p class="eyebrow">Marcas & Producto · Vertical · Redes sociales · 0:09</p><h3>Conexión Natural — Yerba orgánica</h3><p>Pieza breve de producto con foco en atributos naturales y consumo cotidiano. Ideal como complemento de la línea de contenidos de marca.</p><p class="role">Rol: realización / edición</p></div></article>
+      <article class="project-card" data-category="Cultura &amp; Eventos"><div class="media-wrap"><video controls preload="metadata" poster="assets/thumbs/10_cine-boutique-otono.jpg"><source src="assets/videos/10_cine-boutique-otono.mp4" type="video/mp4"></video><span class="pill">Experiencia</span></div><div class="project-body"><p class="eyebrow">Cultura & Eventos · Vertical · Lifestyle cultural · 0:31</p><h3>Cine Boutique — Experiencia Otoño</h3><p>Contenido breve para sostener comunidad y comunicar una experiencia cultural con tono cálido, cercano y de pertenencia.</p><p class="role">Rol: realización / edición</p></div></article>
+      <article class="project-card" data-category="Editorial / Creator Content"><div class="media-wrap"><video controls preload="metadata" poster="assets/thumbs/11_momento-historico.jpg"><source src="assets/videos/11_momento-historico.mp4" type="video/mp4"></video><span class="pill">Archivo / relato</span></div><div class="project-body"><p class="eyebrow">Editorial / Creator Content · Vertical · Contenido editorial · 2:27</p><h3>Comentario editorial — Momento televisivo histórico</h3><p>Contenido de análisis y narración apoyado en material de archivo. Muestra capacidad para construir relato y opinión en formato redes.</p><p class="role">Rol: guion / edición / locución / conducción</p></div></article>
+      <article class="project-card" data-category="Editorial / Creator Content"><div class="media-wrap"><video controls preload="metadata" poster="assets/thumbs/12_resena-pelicula.jpg"><source src="assets/videos/12_resena-pelicula.mp4" type="video/mp4"></video><span class="pill">Cine / opinión</span></div><div class="project-body"><p class="eyebrow">Editorial / Creator Content · Horizontal · Reseña audiovisual · 3:22</p><h3>Reseña / comentario de película</h3><p>Pieza de opinión cinematográfica con presencia en cámara. Aporta una línea más editorial y de creador de contenido.</p><p class="role">Rol: conducción / guion / edición</p></div></article>
+      <article class="project-card" data-category="Editorial / Creator Content"><div class="media-wrap"><video controls preload="metadata" poster="assets/thumbs/13_dune-reaccion.jpg"><source src="assets/videos/13_dune-reaccion.mp4" type="video/mp4"></video><span class="pill">Reacción / cine</span></div><div class="project-body"><p class="eyebrow">Editorial / Creator Content · Vertical · Creator content · 3:39</p><h3>Dune — Reacción a tráiler</h3><p>Contenido de reacción y comentario para redes. Funciona como muestra de ritmo conversacional, presencia en cámara y edición de formato largo/corto.</p><p class="role">Rol: conducción / edición</p></div></article>
+    </div>
+  </div>
+</section>
 
-        <div class="grid" id="projectGrid">
-          <article class="project-card" data-category="Marcas &amp; Producto"><div class="media-wrap"><video controls preload="metadata" poster="assets/thumbs/01_don-marcos-verano.jpg"><source src="assets/videos/01_don-marcos-verano.mp4" type="video/mp4"></video><span class="pill">Cliente / redes</span></div><div class="project-body"><p class="eyebrow">Marcas & Producto · Vertical · Redes sociales · 0:32</p><h3>Don Marcos — Verano</h3><p>Pieza promocional de temporada con estética cálida, foco en experiencia y consumo, pensada para comunicar clima de verano y lifestyle.</p><p class="role">Rol: realización / cámara / edición / color</p></div></article>
-          <article class="project-card" data-category="Marcas &amp; Producto"><div class="media-wrap"><video controls preload="metadata" poster="assets/thumbs/02_conexion-picada.jpg"><source src="assets/videos/02_conexion-picada.mp4" type="video/mp4"></video><span class="pill">Producto / food</span></div><div class="project-body"><p class="eyebrow">Marcas & Producto · Vertical · Redes sociales · 0:20</p><h3>Conexión Natural — Picada saludable</h3><p>Contenido de producto con tono natural y comercial. Muestra ingredientes, textura y situación de consumo de forma simple y apetecible.</p><p class="role">Rol: realización / edición / color</p></div></article>
-          <article class="project-card" data-category="Cultura &amp; Eventos"><div class="media-wrap"><video controls preload="metadata" poster="assets/thumbs/03_universo-evento.jpg"><source src="assets/videos/03_universo-evento.mp4" type="video/mp4"></video><span class="pill">Cobertura</span></div><div class="project-body"><p class="eyebrow">Cultura & Eventos · Vertical · Evento / activación · 1:11</p><h3>Universo — Cobertura de evento</h3><p>Cobertura dinámica de una participación institucional en evento. Combina registro de espacio, público, interacción y momentos de marca.</p><p class="role">Rol: cámara / edición / cobertura</p></div></article>
-          <article class="project-card" data-category="Arquitectura &amp; Contenido educativo"><div class="media-wrap"><video controls preload="metadata" poster="assets/thumbs/04_eperspectiva-transformacion.jpg"><source src="assets/videos/04_eperspectiva-transformacion.mp4" type="video/mp4"></video><span class="pill">Arquitectura</span></div><div class="project-body"><p class="eyebrow">Arquitectura & Contenido educativo · Vertical · Antes / después · 0:37</p><h3>Estudio Perspectiva — Transformación de espacio</h3><p>Video breve orientado a mostrar una transformación visual de arquitectura/interiorismo, con lectura rápida y foco en el impacto del resultado.</p><p class="role">Rol: edición / armado visual / motion</p></div></article>
-          <article class="project-card" data-category="Arquitectura &amp; Contenido educativo"><div class="media-wrap"><video controls preload="metadata" poster="assets/thumbs/05_eperspectiva-cocina.jpg"><source src="assets/videos/05_eperspectiva-cocina.mp4" type="video/mp4"></video><span class="pill">Educativo / redes</span></div><div class="project-body"><p class="eyebrow">Arquitectura & Contenido educativo · Vertical · Tips / contenido de valor · 0:55</p><h3>ePerspectiva — 5 tips para tu cocina</h3><p>Pieza educativa de redes: organiza información en formato de tips, combinando presencia en cámara, recursos gráficos y ritmo de edición.</p><p class="role">Rol: edición / guion / cámara / motion</p></div></article>
-          <article class="project-card" data-category="Cultura &amp; Eventos"><div class="media-wrap"><video controls preload="metadata" poster="assets/thumbs/06_cine-boutique-marzo.jpg"><source src="assets/videos/06_cine-boutique-marzo.mp4" type="video/mp4"></video><span class="pill">Cultura / agenda</span></div><div class="project-body"><p class="eyebrow">Cultura & Eventos · Vertical · Comunicación cultural · 0:56</p><h3>Cine Boutique — Ciclo Mirada Femenina</h3><p>Video de comunicación cultural para anunciar programación. Combina información de agenda, tono cercano y estética acorde al espacio.</p><p class="role">Rol: realización / edición / comunicación</p></div></article>
-          <article class="project-card" data-category="Marcas &amp; Producto"><div class="media-wrap"><video controls preload="metadata" poster="assets/thumbs/07_malta-caramelo.jpg"><source src="assets/videos/07_malta-caramelo.mp4" type="video/mp4"></video><span class="pill">Moda / backstage</span></div><div class="project-body"><p class="eyebrow">Marcas & Producto · Horizontal · Recorte visual · 0:13</p><h3>Malta Caramelo — Backstage sesión de fotos</h3><p>Registro de backstage con estética en blanco y negro, pensado para mostrar proceso, clima de producción y sensibilidad visual.</p><p class="role">Rol: cámara / edición</p></div></article>
-          <article class="project-card" data-category="Personal / Artístico"><div class="media-wrap"><video controls preload="metadata" poster="assets/thumbs/08_disociados.jpg"><source src="assets/videos/08_disociados.mp4" type="video/mp4"></video><span class="pill">Autoral</span></div><div class="project-body"><p class="eyebrow">Personal / Artístico · Horizontal · Pieza personal · 1:53</p><h3>Disociados</h3><p>Trabajo personal de búsqueda estética y narrativa. Funciona como cierre autoral dentro del portfolio para mostrar mirada propia.</p><p class="role">Rol: dirección / cámara / edición / idea</p></div></article>
-          <article class="project-card" data-category="Marcas &amp; Producto"><div class="media-wrap"><video controls preload="metadata" poster="assets/thumbs/09_conexion-yerba.jpg"><source src="assets/videos/09_conexion-yerba.mp4" type="video/mp4"></video><span class="pill">Producto / natural</span></div><div class="project-body"><p class="eyebrow">Marcas & Producto · Vertical · Redes sociales · 0:09</p><h3>Conexión Natural — Yerba orgánica</h3><p>Pieza breve de producto con foco en atributos naturales y consumo cotidiano. Ideal como complemento de la línea de contenidos de marca.</p><p class="role">Rol: realización / edición</p></div></article>
-          <article class="project-card" data-category="Cultura &amp; Eventos"><div class="media-wrap"><video controls preload="metadata" poster="assets/thumbs/10_cine-boutique-otono.jpg"><source src="assets/videos/10_cine-boutique-otono.mp4" type="video/mp4"></video><span class="pill">Experiencia</span></div><div class="project-body"><p class="eyebrow">Cultura & Eventos · Vertical · Lifestyle cultural · 0:31</p><h3>Cine Boutique — Experiencia Otoño</h3><p>Contenido breve para sostener comunidad y comunicar una experiencia cultural con tono cálido, cercano y de pertenencia.</p><p class="role">Rol: realización / edición</p></div></article>
-          <article class="project-card" data-category="Editorial / Creator Content"><div class="media-wrap"><video controls preload="metadata" poster="assets/thumbs/11_momento-historico.jpg"><source src="assets/videos/11_momento-historico.mp4" type="video/mp4"></video><span class="pill">Archivo / relato</span></div><div class="project-body"><p class="eyebrow">Editorial / Creator Content · Vertical · Contenido editorial · 2:27</p><h3>Comentario editorial — Momento televisivo histórico</h3><p>Contenido de análisis y narración apoyado en material de archivo. Muestra capacidad para construir relato y opinión en formato redes.</p><p class="role">Rol: guion / edición / locución / conducción</p></div></article>
-          <article class="project-card" data-category="Editorial / Creator Content"><div class="media-wrap"><video controls preload="metadata" poster="assets/thumbs/12_resena-pelicula.jpg"><source src="assets/videos/12_resena-pelicula.mp4" type="video/mp4"></video><span class="pill">Cine / opinión</span></div><div class="project-body"><p class="eyebrow">Editorial / Creator Content · Horizontal · Reseña audiovisual · 3:22</p><h3>Reseña / comentario de película</h3><p>Pieza de opinión cinematográfica con presencia en cámara. Aporta una línea más editorial y de creador de contenido.</p><p class="role">Rol: conducción / guion / edición</p></div></article>
-          <article class="project-card" data-category="Editorial / Creator Content"><div class="media-wrap"><video controls preload="metadata" poster="assets/thumbs/13_dune-reaccion.jpg"><source src="assets/videos/13_dune-reaccion.mp4" type="video/mp4"></video><span class="pill">Reacción / cine</span></div><div class="project-body"><p class="eyebrow">Editorial / Creator Content · Vertical · Creator content · 3:39</p><h3>Dune — Reacción a tráiler</h3><p>Contenido de reacción y comentario para redes. Funciona como muestra de ritmo conversacional, presencia en cámara y edición de formato largo/corto.</p><p class="role">Rol: conducción / edición</p></div></article>
-        </div>
-      </div>
-    </section>
+<section>
+  <div class="container">
+    <div class="section-title">
+      <h2>Servicios posibles</h2>
+      <p class="section-copy">Formatos que puedo desarrollar para marcas, proyectos culturales y creadores.</p>
+    </div>
+    <div class="process">
+      <div class="process-card"><span>01</span><h3>Contenido para redes</h3><p>Reels, piezas verticales, videos de producto, promociones, lanzamientos y contenido de marca.</p></div>
+      <div class="process-card"><span>02</span><h3>Cobertura audiovisual</h3><p>Eventos, activaciones, espacios culturales, backstage y registro de experiencias.</p></div>
+      <div class="process-card"><span>03</span><h3>Edición & narrativa</h3><p>Selección de material, ritmo, estructura, recursos gráficos y adaptación a formatos digitales.</p></div>
+    </div>
+  </div>
+</section>
+```
 
-    <section>
-      <div class="container">
-        <div class="section-title">
-          <h2>Servicios posibles</h2>
-          <p class="section-copy">Formatos que puedo desarrollar para marcas, proyectos culturales y creadores.</p>
-        </div>
-        <div class="process">
-          <div class="process-card"><span>01</span><h3>Contenido para redes</h3><p>Reels, piezas verticales, videos de producto, promociones, lanzamientos y contenido de marca.</p></div>
-          <div class="process-card"><span>02</span><h3>Cobertura audiovisual</h3><p>Eventos, activaciones, espacios culturales, backstage y registro de experiencias.</p></div>
-          <div class="process-card"><span>03</span><h3>Edición & narrativa</h3><p>Selección de material, ritmo, estructura, recursos gráficos y adaptación a formatos digitales.</p></div>
-        </div>
-      </div>
-    </section>
   </main>
 
   <footer id="contacto">
@@ -474,5 +454,6 @@
       });
     }));
   </script>
+
 </body>
 </html>
