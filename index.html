@@ -1,0 +1,380 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Portfolio Audiovisual</title>
+  <meta name="description" content="Portfolio audiovisual: marcas, cultura, redes, arquitectura, contenido editorial y proyectos personales." />
+  <style>
+    :root {
+      --bg:#0f0f10; --panel:#171719; --panel2:#202023; --text:#f3f1ec; --muted:#b5b0a8; --line:#333338; --accent:#e9d7b7; --accent2:#9e8d72;
+      --radius:22px;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;font-family:Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;background:radial-gradient(circle at 20% 0%, #252322 0%, var(--bg) 45%), var(--bg);color:var(--text);line-height:1.5}
+    a{color:inherit}
+    .container{width:min(1160px, calc(100% - 40px)); margin:0 auto}
+    header{padding:28px 0 12px; position:sticky; top:0; z-index:10; backdrop-filter:blur(16px); background:rgba(15,15,16,.72); border-bottom:1px solid rgba(255,255,255,.06)}
+    .topbar{display:flex; align-items:center; justify-content:space-between; gap:16px}
+    .brand{font-size:15px; letter-spacing:.12em; text-transform:uppercase; color:var(--accent)}
+    nav{display:flex; gap:18px; font-size:14px; color:var(--muted); flex-wrap:wrap}
+    nav a{text-decoration:none}
+    nav a:hover{color:var(--text)}
+    .hero{padding:72px 0 52px}
+    .hero-grid{display:grid; grid-template-columns:1.05fr .95fr; gap:44px; align-items:center}
+    .kicker{color:var(--accent); text-transform:uppercase; letter-spacing:.16em; font-size:13px; margin:0 0 18px}
+    h1{font-size:clamp(42px, 7vw, 88px); line-height:.93; letter-spacing:-.06em; margin:0 0 24px}
+    .lead{font-size:clamp(18px,2.2vw,24px); color:var(--muted); max-width:760px; margin:0 0 28px}
+    .hero-actions{display:flex; gap:14px; flex-wrap:wrap; margin-top:28px}
+    .btn{display:inline-flex; align-items:center; justify-content:center; gap:8px; border:1px solid var(--line); border-radius:999px; padding:13px 18px; text-decoration:none; background:rgba(255,255,255,.03); color:var(--text); font-weight:600}
+    .btn.primary{background:var(--accent); color:#141414; border-color:var(--accent)}
+    .hero-card{background:linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.02)); border:1px solid rgba(255,255,255,.12); border-radius:var(--radius); padding:14px; box-shadow:0 30px 100px rgba(0,0,0,.45)}
+    .hero-card video{width:100%; aspect-ratio:9/16; max-height:680px; object-fit:cover; border-radius:16px; display:block; background:#000}
+    .hero-note{font-size:13px; color:var(--muted); margin:10px 4px 0}
+    section{padding:54px 0; border-top:1px solid rgba(255,255,255,.07)}
+    .section-title{display:flex; justify-content:space-between; align-items:end; gap:20px; margin-bottom:26px}
+    h2{font-size:clamp(28px,4vw,48px); line-height:1; letter-spacing:-.04em; margin:0}
+    .section-copy{color:var(--muted); max-width:560px; margin:0}
+    .stats{display:grid; grid-template-columns:repeat(4,1fr); gap:14px; margin-top:34px}
+    .stat{background:var(--panel); border:1px solid rgba(255,255,255,.08); padding:20px; border-radius:18px}
+    .stat strong{display:block; font-size:28px; line-height:1.1}
+    .stat span{display:block; color:var(--muted); font-size:13px; margin-top:8px}
+    .filters{display:flex; gap:10px; flex-wrap:wrap; margin-bottom:24px}
+    .filter{appearance:none; border:1px solid var(--line); background:rgba(255,255,255,.03); color:var(--muted); padding:10px 14px; border-radius:999px; cursor:pointer; font:inherit; font-size:14px}
+    .filter.active, .filter:hover{background:var(--text); color:#111; border-color:var(--text)}
+    .grid{display:grid; grid-template-columns:repeat(3,1fr); gap:18px}
+    .project-card{background:var(--panel); border:1px solid rgba(255,255,255,.08); border-radius:var(--radius); overflow:hidden; transition:.2s transform, .2s border-color; min-height:100%; display:flex; flex-direction:column}
+    .project-card:hover{transform:translateY(-3px); border-color:rgba(233,215,183,.45)}
+    .project-card.featured{background:linear-gradient(180deg, rgba(233,215,183,.08), rgba(255,255,255,.03));}
+    .media-wrap{position:relative; background:#050505}
+    .media-wrap video{width:100%; aspect-ratio:9/14; object-fit:cover; display:block; background:#000}
+    .pill{position:absolute; top:12px; left:12px; background:rgba(15,15,16,.78); border:1px solid rgba(255,255,255,.16); backdrop-filter:blur(10px); border-radius:999px; padding:7px 10px; font-size:12px; color:var(--accent)}
+    .project-body{padding:18px; display:flex; flex-direction:column; gap:10px; flex:1}
+    .eyebrow{margin:0; color:var(--accent2); font-size:12px; text-transform:uppercase; letter-spacing:.08em}
+    h3{margin:0; font-size:21px; letter-spacing:-.02em}
+    .project-body p{margin:0; color:var(--muted)}
+    .role{font-size:13px; border-top:1px solid rgba(255,255,255,.08); padding-top:12px; margin-top:auto!important; color:#d9d2c6!important}
+    .category-list{display:grid; grid-template-columns:repeat(5,1fr); gap:14px}
+    .cat{background:var(--panel); border:1px solid rgba(255,255,255,.08); border-radius:18px; padding:18px}
+    .cat h3{font-size:17px; margin-bottom:8px}
+    .cat p{color:var(--muted); font-size:14px; margin:0}
+    .process{display:grid; grid-template-columns:repeat(3,1fr); gap:18px}
+    .process-card{background:var(--panel); border:1px solid rgba(255,255,255,.08); border-radius:18px; padding:22px}
+    .process-card span{color:var(--accent); font-size:13px; letter-spacing:.14em}
+    .process-card h3{margin-top:8px}
+    .process-card p{color:var(--muted); margin-bottom:0}
+    footer{padding:56px 0 70px; border-top:1px solid rgba(255,255,255,.07); color:var(--muted)}
+    .footer-card{background:linear-gradient(135deg, rgba(233,215,183,.12), rgba(255,255,255,.03)); border:1px solid rgba(255,255,255,.1); border-radius:var(--radius); padding:28px; display:grid; grid-template-columns:1fr auto; gap:20px; align-items:center}
+    .footer-card h2{font-size:34px}
+    .small{font-size:13px; color:#8d887f; margin-top:16px}
+    @media (max-width:920px){.hero-grid{grid-template-columns:1fr}.grid{grid-template-columns:repeat(2,1fr)}.stats{grid-template-columns:repeat(2,1fr)}.category-list{grid-template-columns:repeat(2,1fr)}.process{grid-template-columns:1fr}}
+    @media (max-width:620px){.container{width:min(100% - 24px,1160px)} header{position:relative} .topbar{align-items:flex-start; flex-direction:column} nav{gap:12px} .hero{padding-top:42px} .grid{grid-template-columns:1fr} .stats{grid-template-columns:1fr} .category-list{grid-template-columns:1fr} .footer-card{grid-template-columns:1fr} .hero-actions{flex-direction:column} .btn{width:100%}}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container topbar">
+      <div class="brand">Portfolio Audiovisual</div>
+      <nav>
+        <a href="#trabajos">Trabajos</a>
+        <a href="#enfoque">Enfoque</a>
+        <a href="#contacto">Contacto</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <p class="kicker">Realización · Edición · Contenido</p>
+          <h1>Videos para marcas, cultura, redes y proyectos con mirada propia.</h1>
+          <p class="lead">Una selección curada de piezas comerciales, coberturas, contenido educativo, editorial y trabajos personales. El foco está puesto en ritmo, estética y claridad narrativa.</p>
+          <div class="hero-actions">
+            <a class="btn primary" href="#trabajos">Ver trabajos seleccionados</a>
+            <a class="btn" href="assets/videos/00_showreel_base_sin_musica.mp4" download>Descargar showreel base</a>
+          </div>
+          <div class="stats">
+            <div class="stat"><strong>13</strong><span>videos organizados</span></div>
+            <div class="stat"><strong>5</strong><span>secciones de portfolio</span></div>
+            <div class="stat"><strong>8</strong><span>trabajos destacados</span></div>
+            <div class="stat"><strong>1</strong><span>showreel base</span></div>
+          </div>
+        </div>
+        <div class="hero-card">
+          <video controls preload="metadata" poster="assets/thumbs/00_showreel.jpg">
+            <source src="assets/videos/00_showreel_base_sin_musica.mp4" type="video/mp4">
+          </video>
+          <p class="hero-note">Showreel base sin música: pensado para sumar una pista propia y ajustar cortes finos.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="enfoque">
+      <div class="container">
+        <div class="section-title">
+          <h2>Enfoque</h2>
+          <p class="section-copy">El portfolio está organizado para que la variedad se lea como versatilidad: clientes, cultura, redes, arquitectura, contenido editorial y una línea personal.</p>
+        </div>
+        <div class="category-list">
+          <div class="cat"><h3>Marcas & Producto</h3><p>Videos breves, visuales y comerciales para comunicar productos y experiencias.</p></div>
+          <div class="cat"><h3>Cultura & Eventos</h3><p>Coberturas y comunicación para espacios culturales, ciclos y activaciones.</p></div>
+          <div class="cat"><h3>Arquitectura</h3><p>Contenido educativo, transformaciones y piezas de valor para redes.</p></div>
+          <div class="cat"><h3>Editorial</h3><p>Videos con conducción, opinión, archivo y narrativa de creador de contenido.</p></div>
+          <div class="cat"><h3>Personal</h3><p>Trabajos autorales que muestran sensibilidad visual y búsqueda estética.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="trabajos">
+      <div class="container">
+        <div class="section-title">
+          <h2>Trabajos seleccionados</h2>
+          <p class="section-copy">Primero aparecen las piezas más fuertes para clientes, cultura y estética visual. Los contenidos editoriales quedan separados para que no compitan con el bloque comercial.</p>
+        </div>
+        <div class="filters"><button class="filter active" data-filter="all">Todo</button><button class="filter" data-filter="Marcas &amp; Producto">Marcas &amp; Producto</button><button class="filter" data-filter="Cultura &amp; Eventos">Cultura &amp; Eventos</button><button class="filter" data-filter="Arquitectura &amp; Contenido educativo">Arquitectura &amp; Contenido educativo</button><button class="filter" data-filter="Personal / Artístico">Personal / Artístico</button><button class="filter" data-filter="Editorial / Creator Content">Editorial / Creator Content</button></div>
+        <div class="grid" id="projectGrid">
+          
+    <article class="project-card featured" data-category="Marcas &amp; Producto">
+      <div class="media-wrap">
+        <video controls preload="metadata" poster="assets/thumbs/01_don-marcos-verano.jpg">
+          <source src="assets/videos/01_don-marcos-verano.mp4" type="video/mp4">
+        </video>
+        <span class="pill">Cliente / redes</span>
+      </div>
+      <div class="project-body">
+        <p class="eyebrow">Marcas &amp; Producto · Vertical · Redes sociales · 0:32</p>
+        <h3>Don Marcos — Verano</h3>
+        <p>Pieza promocional de temporada con estética cálida, foco en experiencia y consumo, pensada para comunicar clima de verano y lifestyle.</p>
+        <p class="role">Rol a completar: dirección / cámara / edición / color</p>
+      </div>
+    </article>
+    
+    <article class="project-card featured" data-category="Marcas &amp; Producto">
+      <div class="media-wrap">
+        <video controls preload="metadata" poster="assets/thumbs/02_conexion-picada.jpg">
+          <source src="assets/videos/02_conexion-picada.mp4" type="video/mp4">
+        </video>
+        <span class="pill">Producto / food</span>
+      </div>
+      <div class="project-body">
+        <p class="eyebrow">Marcas &amp; Producto · Vertical · Redes sociales · 0:20</p>
+        <h3>Conexión Natural — Picada saludable</h3>
+        <p>Contenido de producto con tono natural y comercial. Muestra ingredientes, textura y situación de consumo de forma simple y apetecible.</p>
+        <p class="role">Rol a completar: realización / edición / color</p>
+      </div>
+    </article>
+    
+    <article class="project-card featured" data-category="Cultura &amp; Eventos">
+      <div class="media-wrap">
+        <video controls preload="metadata" poster="assets/thumbs/03_universo-evento.jpg">
+          <source src="assets/videos/03_universo-evento.mp4" type="video/mp4">
+        </video>
+        <span class="pill">Cobertura</span>
+      </div>
+      <div class="project-body">
+        <p class="eyebrow">Cultura &amp; Eventos · Vertical · Evento / activación · 1:11</p>
+        <h3>Universo — Cobertura de evento</h3>
+        <p>Cobertura dinámica de una participación institucional en evento. Combina registro de espacio, público, interacción y momentos de marca.</p>
+        <p class="role">Rol a completar: cámara / edición / cobertura</p>
+      </div>
+    </article>
+    
+    <article class="project-card featured" data-category="Arquitectura &amp; Contenido educativo">
+      <div class="media-wrap">
+        <video controls preload="metadata" poster="assets/thumbs/04_eperspectiva-transformacion.jpg">
+          <source src="assets/videos/04_eperspectiva-transformacion.mp4" type="video/mp4">
+        </video>
+        <span class="pill">Arquitectura</span>
+      </div>
+      <div class="project-body">
+        <p class="eyebrow">Arquitectura &amp; Contenido educativo · Vertical · Antes / después · 0:37</p>
+        <h3>ePerspectiva — Transformación de espacio</h3>
+        <p>Video breve orientado a mostrar una transformación visual de arquitectura/interiorismo, con lectura rápida y foco en el impacto del resultado.</p>
+        <p class="role">Rol a completar: edición / armado visual / motion</p>
+      </div>
+    </article>
+    
+    <article class="project-card featured" data-category="Arquitectura &amp; Contenido educativo">
+      <div class="media-wrap">
+        <video controls preload="metadata" poster="assets/thumbs/05_eperspectiva-cocina.jpg">
+          <source src="assets/videos/05_eperspectiva-cocina.mp4" type="video/mp4">
+        </video>
+        <span class="pill">Educativo / redes</span>
+      </div>
+      <div class="project-body">
+        <p class="eyebrow">Arquitectura &amp; Contenido educativo · Vertical · Tips / contenido de valor · 0:55</p>
+        <h3>ePerspectiva — 5 tips para tu cocina</h3>
+        <p>Pieza educativa de redes: organiza información en formato de tips, combinando presencia en cámara, recursos gráficos y ritmo de edición.</p>
+        <p class="role">Rol a completar: edición / guion / cámara / motion</p>
+      </div>
+    </article>
+    
+    <article class="project-card featured" data-category="Cultura &amp; Eventos">
+      <div class="media-wrap">
+        <video controls preload="metadata" poster="assets/thumbs/06_cine-boutique-marzo.jpg">
+          <source src="assets/videos/06_cine-boutique-marzo.mp4" type="video/mp4">
+        </video>
+        <span class="pill">Cultura / agenda</span>
+      </div>
+      <div class="project-body">
+        <p class="eyebrow">Cultura &amp; Eventos · Vertical · Comunicación cultural · 0:56</p>
+        <h3>Cine Boutique — Ciclo Mirada Femenina</h3>
+        <p>Video de comunicación cultural para anunciar programación. Combina información de agenda, tono cercano y estética acorde al espacio.</p>
+        <p class="role">Rol a completar: realización / edición / comunicación</p>
+      </div>
+    </article>
+    
+    <article class="project-card featured" data-category="Marcas &amp; Producto">
+      <div class="media-wrap">
+        <video controls preload="metadata" poster="assets/thumbs/07_malta-caramelo.jpg">
+          <source src="assets/videos/07_malta-caramelo.mp4" type="video/mp4">
+        </video>
+        <span class="pill">Moda / backstage</span>
+      </div>
+      <div class="project-body">
+        <p class="eyebrow">Marcas &amp; Producto · Horizontal · Recorte visual · 0:13</p>
+        <h3>Malta Caramelo — Backstage sesión de fotos</h3>
+        <p>Registro de backstage con estética en blanco y negro, pensado para mostrar proceso, clima de producción y sensibilidad visual.</p>
+        <p class="role">Rol a completar: cámara / edición</p>
+      </div>
+    </article>
+    
+    <article class="project-card featured" data-category="Personal / Artístico">
+      <div class="media-wrap">
+        <video controls preload="metadata" poster="assets/thumbs/08_disociados.jpg">
+          <source src="assets/videos/08_disociados.mp4" type="video/mp4">
+        </video>
+        <span class="pill">Autoral</span>
+      </div>
+      <div class="project-body">
+        <p class="eyebrow">Personal / Artístico · Horizontal · Pieza personal · 1:53</p>
+        <h3>Disociados</h3>
+        <p>Trabajo personal de búsqueda estética y narrativa. Funciona como cierre autoral dentro del portfolio para mostrar mirada propia.</p>
+        <p class="role">Rol a completar: dirección / cámara / edición / idea</p>
+      </div>
+    </article>
+    
+    <article class="project-card" data-category="Marcas &amp; Producto">
+      <div class="media-wrap">
+        <video controls preload="metadata" poster="assets/thumbs/09_conexion-yerba.jpg">
+          <source src="assets/videos/09_conexion-yerba.mp4" type="video/mp4">
+        </video>
+        <span class="pill">Producto / natural</span>
+      </div>
+      <div class="project-body">
+        <p class="eyebrow">Marcas &amp; Producto · Vertical · Redes sociales · 0:09</p>
+        <h3>Conexión Natural — Yerba orgánica</h3>
+        <p>Pieza breve de producto con foco en atributos naturales y consumo cotidiano. Ideal como complemento de la línea de contenidos de marca.</p>
+        <p class="role">Rol a completar: realización / edición</p>
+      </div>
+    </article>
+    
+    <article class="project-card" data-category="Cultura &amp; Eventos">
+      <div class="media-wrap">
+        <video controls preload="metadata" poster="assets/thumbs/10_cine-boutique-otono.jpg">
+          <source src="assets/videos/10_cine-boutique-otono.mp4" type="video/mp4">
+        </video>
+        <span class="pill">Experiencia</span>
+      </div>
+      <div class="project-body">
+        <p class="eyebrow">Cultura &amp; Eventos · Vertical · Lifestyle cultural · 0:31</p>
+        <h3>Cine Boutique — Experiencia Otoño</h3>
+        <p>Contenido breve para sostener comunidad y comunicar una experiencia cultural con tono cálido, cercano y de pertenencia.</p>
+        <p class="role">Rol a completar: realización / edición</p>
+      </div>
+    </article>
+    
+    <article class="project-card" data-category="Editorial / Creator Content">
+      <div class="media-wrap">
+        <video controls preload="metadata" poster="assets/thumbs/11_momento-historico.jpg">
+          <source src="assets/videos/11_momento-historico.mp4" type="video/mp4">
+        </video>
+        <span class="pill">Archivo / relato</span>
+      </div>
+      <div class="project-body">
+        <p class="eyebrow">Editorial / Creator Content · Vertical · Contenido editorial · 2:27</p>
+        <h3>Comentario editorial — Momento televisivo histórico</h3>
+        <p>Contenido de análisis y narración apoyado en material de archivo. Muestra capacidad para construir relato y opinión en formato redes.</p>
+        <p class="role">Rol a completar: guion / edición / locución / conducción</p>
+      </div>
+    </article>
+    
+    <article class="project-card" data-category="Editorial / Creator Content">
+      <div class="media-wrap">
+        <video controls preload="metadata" poster="assets/thumbs/12_resena-pelicula.jpg">
+          <source src="assets/videos/12_resena-pelicula.mp4" type="video/mp4">
+        </video>
+        <span class="pill">Cine / opinión</span>
+      </div>
+      <div class="project-body">
+        <p class="eyebrow">Editorial / Creator Content · Horizontal · Reseña audiovisual · 3:22</p>
+        <h3>Reseña / comentario de película</h3>
+        <p>Pieza de opinión cinematográfica con presencia en cámara. Aporta una línea más editorial y de creador de contenido.</p>
+        <p class="role">Rol a completar: conducción / guion / edición</p>
+      </div>
+    </article>
+    
+    <article class="project-card" data-category="Editorial / Creator Content">
+      <div class="media-wrap">
+        <video controls preload="metadata" poster="assets/thumbs/13_dune-reaccion.jpg">
+          <source src="assets/videos/13_dune-reaccion.mp4" type="video/mp4">
+        </video>
+        <span class="pill">Reacción / cine</span>
+      </div>
+      <div class="project-body">
+        <p class="eyebrow">Editorial / Creator Content · Vertical · Creator content · 3:39</p>
+        <h3>Dune — Reacción a tráiler</h3>
+        <p>Contenido de reacción y comentario para redes. Funciona como muestra de ritmo conversacional, presencia en cámara y edición de formato largo/corto.</p>
+        <p class="role">Rol a completar: conducción / edición</p>
+      </div>
+    </article>
+    
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="section-title">
+          <h2>Servicios posibles</h2>
+          <p class="section-copy">Texto editable para orientar el portfolio a clientes. Podés ajustar esta sección según los trabajos que quieras conseguir.</p>
+        </div>
+        <div class="process">
+          <div class="process-card"><span>01</span><h3>Contenido para redes</h3><p>Reels, piezas verticales, videos de producto, promociones, lanzamientos y contenido de marca.</p></div>
+          <div class="process-card"><span>02</span><h3>Cobertura audiovisual</h3><p>Eventos, activaciones, espacios culturales, backstage y registro de experiencias.</p></div>
+          <div class="process-card"><span>03</span><h3>Edición & narrativa</h3><p>Selección de material, ritmo, estructura, recursos gráficos y adaptación a formatos digitales.</p></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer id="contacto">
+    <div class="container">
+      <div class="footer-card">
+        <div>
+          <h2>Disponible para proyectos audiovisuales.</h2>
+          <p>Reemplazá este texto por tu mail, Instagram, WhatsApp o link de contacto.</p>
+          <p class="small">Editar en index.html: nombre, bio, roles y datos de contacto.</p>
+        </div>
+        <a class="btn primary" href="mailto:tuemail@ejemplo.com">tuemail@ejemplo.com</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const buttons = document.querySelectorAll('.filter');
+    const cards = document.querySelectorAll('.project-card');
+    buttons.forEach(btn => btn.addEventListener('click', () => {
+      buttons.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      const filter = btn.dataset.filter;
+      cards.forEach(card => {
+        const show = filter === 'all' || card.dataset.category === filter;
+        card.style.display = show ? 'flex' : 'none';
+      });
+    }));
+  </script>
+</body>
+</html>
