@@ -308,6 +308,32 @@
       .btn{width:100%}
       .video-side-text{font-size:18px}
     }
+    /* FIX FINAL: video arriba + texto debajo */
+.hero-media{
+  display:flex !important;
+  flex-direction:column !important;
+  gap:15px !important;
+  align-items:stretch !important;
+}
+
+.hero-media .hero-card{
+  width:100% !important;
+  order:1 !important;
+}
+
+.hero-media .video-side-text{
+  order:2 !important;
+  margin:0 !important;
+  max-width:100% !important;
+  font-size:17px !important;
+  line-height:1.1 !important;
+}
+
+.hero-media .hero-card video{
+  width:100% !important;
+  aspect-ratio:16/9 !important;
+  display:block !important;
+}
   </style>
 </head>
 
