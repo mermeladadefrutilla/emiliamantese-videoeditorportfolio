@@ -1,0 +1,13 @@
+VIDEOS COMPRIMIDOS PARA GITHUB
+
+Estos archivos tienen los mismos nombres que los videos originales del portfolio.
+Para subirlos a GitHub:
+
+1. Descomprimí este ZIP.
+2. En tu repositorio, entrá a la carpeta assets/videos.
+   Si no existe, podés subir la carpeta assets completa desde este ZIP.
+3. Tocá Add file > Upload files.
+4. Arrastrá todos los .mp4 comprimidos.
+5. Commit changes.
+
+No cambies los nombres de los archivos: index.html ya los llama con estos nombres.
