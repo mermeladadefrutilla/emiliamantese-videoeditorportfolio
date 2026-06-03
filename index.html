@@ -1,21 +1,20 @@
-```html
 <!doctype html>
 <html lang="es">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Emilia Mantese · Portfolio Audiovisual</title>
-  <meta name="description" content="Portfolio audiovisual de Emilia Mantese: realización, edición y contenido para marcas, cultura, redes y proyectos personales." />
+  <meta name="description" content="Portfolio audiovisual de Emilia Mantese: edición, realización y contenido para marcas, cultura, redes y proyectos personales." />
 
   <style>
-    /* Emilia Mantese · Portfolio Audiovisual · Rosa/Rojo · Helvetica */
-
     :root{
-      --pink:#ffabc0;
-      --pink-strong:#ff7fa3;
-      --red:#ff1f14;
-      --black:#111111;
-      --line:rgba(255,36,24,.22);
+      --bg:#f1f1f1;
+      --paper:#ffffff;
+      --red:#ff2a1a;
+      --ink:#111111;
+      --muted:#6f6f6f;
+      --line:#111111;
+      --soft:#e7e7e7;
     }
 
     *{
@@ -29,12 +28,8 @@
     body{
       margin:0;
       font-family:Helvetica, Arial, sans-serif;
-      background:var(--pink);
-      background-image:
-        linear-gradient(var(--line) 1px, transparent 1px),
-        linear-gradient(90deg, var(--line) 1px, transparent 1px);
-      background-size:34px 34px;
-      color:var(--red);
+      background:var(--bg);
+      color:var(--ink);
       line-height:1.45;
       -webkit-font-smoothing:antialiased;
     }
@@ -44,269 +39,278 @@
     }
 
     .container{
-      width:min(1180px, calc(100% - 40px));
+      width:min(1220px, calc(100% - 40px));
       margin:0 auto;
     }
 
     header{
       position:sticky;
       top:0;
-      z-index:20;
-      background:rgba(255,171,192,.94);
-      backdrop-filter:blur(12px);
-      border-bottom:1px solid var(--red);
+      z-index:50;
+      background:rgba(241,241,241,.9);
+      backdrop-filter:blur(14px);
+      border-bottom:1px solid var(--ink);
     }
 
     .topbar{
       display:flex;
       align-items:center;
       justify-content:space-between;
-      gap:20px;
+      gap:24px;
       padding:18px 0;
     }
 
     .brand{
-      font-size:13px;
+      font-size:12px;
       font-weight:700;
       letter-spacing:.08em;
       text-transform:uppercase;
-      color:var(--red);
+      color:var(--ink);
     }
 
     nav{
       display:flex;
       gap:18px;
       flex-wrap:wrap;
-      font-size:12px;
+      font-size:11px;
       font-weight:700;
-      letter-spacing:.06em;
+      letter-spacing:.08em;
       text-transform:uppercase;
     }
 
     nav a{
       text-decoration:none;
-      padding-bottom:3px;
+      color:var(--ink);
       border-bottom:1px solid transparent;
+      padding-bottom:3px;
     }
 
     nav a:hover{
+      color:var(--red);
       border-bottom-color:var(--red);
     }
 
     .hero{
-      padding:86px 0 78px;
+      padding:76px 0 96px;
+      border-bottom:1px solid var(--ink);
+      background:var(--paper);
     }
 
-    .hero-grid{
+    .hero-composition{
+      position:relative;
+      min-height:720px;
       display:grid;
-      grid-template-columns:minmax(320px,.82fr) minmax(520px,1.18fr);
-      gap:56px;
-      align-items:center;
+      grid-template-columns:repeat(12, 1fr);
+      grid-template-rows:auto;
+      gap:18px;
+      align-items:start;
     }
 
-    .kicker{
-      margin:0 0 20px;
-      font-size:12px;
+    .hero-meta{
+      grid-column:1 / 4;
+      grid-row:1;
+      font-size:11px;
       font-weight:700;
-      letter-spacing:.16em;
+      letter-spacing:.08em;
       text-transform:uppercase;
-      color:var(--red);
+      color:var(--ink);
     }
 
-    h1,
-    h2,
-    h3{
-      font-family:Helvetica, Arial, sans-serif;
+    .hero-meta span{
+      display:block;
+      color:var(--red);
+      margin-top:8px;
+    }
+
+    .hero-title{
+      position:absolute;
+      left:-.03em;
+      right:0;
+      top:245px;
+      z-index:4;
       margin:0;
       color:var(--red);
-      letter-spacing:-.065em;
-    }
-
-    h1{
-      font-size:clamp(48px, 6.7vw, 92px);
-      line-height:.9;
+      font-size:clamp(72px, 14vw, 184px);
+      line-height:.78;
+      letter-spacing:-.085em;
       font-weight:700;
-      max-width:780px;
+      text-transform:uppercase;
+      white-space:nowrap;
+      pointer-events:none;
     }
 
-    .lead{
-      max-width:620px;
-      margin:26px 0 0;
-      color:var(--red);
-      font-size:clamp(17px,1.45vw,20px);
-      line-height:1.45;
-      font-weight:400;
+    .hero-video{
+      grid-column:3 / 11;
+      grid-row:1;
+      margin-top:86px;
+      position:relative;
+      z-index:2;
+      background:var(--ink);
+      border:1px solid var(--ink);
+    }
+
+    .hero-video video{
+      width:100%;
+      aspect-ratio:16/9;
+      display:block;
+      object-fit:cover;
+      background:#000;
+    }
+
+    .hero-panel{
+      grid-column:7 / 10;
+      grid-row:1;
+      align-self:end;
+      margin-top:520px;
+      position:relative;
+      z-index:5;
+      background:var(--red);
+      color:var(--paper);
+      padding:22px;
+      min-height:190px;
+      border:1px solid var(--red);
+    }
+
+    .hero-panel p{
+      margin:0;
+      font-size:15px;
+      line-height:1.25;
+    }
+
+    .hero-panel strong{
+      display:block;
+      font-size:26px;
+      line-height:.95;
+      letter-spacing:-.055em;
+      margin-bottom:18px;
+    }
+
+    .hero-intro{
+      grid-column:1 / 5;
+      grid-row:1;
+      margin-top:430px;
+      position:relative;
+      z-index:6;
+      max-width:390px;
+    }
+
+    .hero-intro p{
+      margin:0;
+      font-size:18px;
+      line-height:1.35;
+      color:var(--ink);
     }
 
     .hero-actions{
       display:flex;
       gap:10px;
       flex-wrap:wrap;
-      margin-top:34px;
+      margin-top:26px;
     }
 
     .btn{
       display:inline-flex;
       align-items:center;
       justify-content:center;
-      min-height:42px;
-      padding:11px 16px;
-      border:1px solid var(--red);
+      min-height:40px;
+      padding:10px 15px;
+      border:1px solid var(--ink);
       border-radius:999px;
-      color:var(--red);
       background:transparent;
+      color:var(--ink);
       text-decoration:none;
       text-transform:uppercase;
-      font-size:12px;
+      font-size:11px;
       font-weight:700;
-      letter-spacing:.05em;
-      transition:background .15s ease, color .15s ease, transform .15s ease;
+      letter-spacing:.07em;
+      transition:.15s ease;
     }
 
     .btn:hover{
-      background:var(--red);
-      color:var(--pink);
+      background:var(--ink);
+      color:var(--paper);
     }
 
     .btn.primary{
       background:var(--red);
-      color:var(--pink);
+      color:var(--paper);
+      border-color:var(--red);
     }
 
     .btn.primary:hover{
-      transform:translateY(-1px);
-    }
-
-    .stats{
-      display:grid;
-      grid-template-columns:repeat(2,1fr);
-      gap:0;
-      margin-top:46px;
-      border:1px solid var(--red);
-      max-width:660px;
-    }
-
-    .stat{
-      min-height:118px;
-      padding:18px;
-      border-right:1px solid var(--red);
-      border-bottom:1px solid var(--red);
-      background:transparent;
-    }
-
-    .stat:nth-child(2),
-    .stat:nth-child(4){
-      border-right:0;
-    }
-
-    .stat:nth-child(3),
-    .stat:nth-child(4){
-      border-bottom:0;
-    }
-
-    .stat strong{
-      display:block;
-      font-size:19px;
-      line-height:1.05;
-      font-weight:700;
-      letter-spacing:-.035em;
-    }
-
-    .stat span{
-      display:block;
-      margin-top:10px;
-      color:var(--red);
-      font-size:12px;
-      font-weight:400;
-      line-height:1.32;
-      max-width:230px;
-    }
-
-    .hero-media{
-      display:grid;
-      grid-template-columns:150px minmax(0,1fr);
-      gap:18px;
-      align-items:end;
-    }
-
-    .video-side-text{
-      margin:0;
-      color:var(--red);
-      font-size:17px;
-      line-height:1.08;
-      font-weight:700;
-      letter-spacing:-.045em;
-      text-wrap:balance;
-    }
-
-    .hero-card{
-      border:1px solid var(--red);
-      background:transparent;
-      padding:10px;
-    }
-
-    .hero-card video{
-      width:100%;
-      aspect-ratio:16/9;
-      max-height:none;
-      object-fit:cover;
-      display:block;
-      background:#000;
-      border:1px solid var(--red);
+      background:var(--ink);
+      border-color:var(--ink);
     }
 
     section{
-      padding:64px 0;
-      border-top:1px solid var(--red);
+      padding:76px 0;
+      border-bottom:1px solid var(--ink);
     }
 
     .section-title{
-      max-width:760px;
-      margin-bottom:30px;
+      display:grid;
+      grid-template-columns:repeat(12, 1fr);
+      gap:18px;
+      align-items:start;
+      margin-bottom:34px;
+    }
+
+    .section-label{
+      grid-column:1 / 3;
+      margin:0;
+      font-size:11px;
+      font-weight:700;
+      letter-spacing:.08em;
+      text-transform:uppercase;
+      color:var(--red);
     }
 
     h2{
-      font-size:clamp(42px, 6vw, 82px);
-      line-height:.88;
+      grid-column:3 / 9;
+      margin:0;
+      font-size:clamp(44px, 7vw, 98px);
+      line-height:.82;
+      letter-spacing:-.08em;
+      color:var(--ink);
       font-weight:700;
     }
 
     .section-copy{
-      max-width:620px;
-      margin:16px 0 0;
-      color:var(--red);
+      grid-column:9 / 13;
+      margin:0;
+      color:var(--muted);
       font-size:14px;
-      font-weight:400;
-      line-height:1.55;
+      line-height:1.5;
+      max-width:360px;
     }
 
     .category-list{
       display:grid;
-      grid-template-columns:repeat(5,1fr);
+      grid-template-columns:repeat(5, 1fr);
+      border:1px solid var(--ink);
+      background:var(--ink);
       gap:1px;
-      border:1px solid var(--red);
-      background:var(--red);
     }
 
     .cat{
-      min-height:160px;
-      padding:16px;
-      background:var(--pink);
+      background:var(--paper);
+      padding:18px;
+      min-height:170px;
     }
 
     .cat h3{
-      margin:0 0 10px;
-      font-size:22px;
-      line-height:.96;
-      font-weight:700;
+      margin:0 0 12px;
+      font-size:24px;
+      line-height:.95;
+      letter-spacing:-.055em;
+      color:var(--red);
     }
 
     .cat p{
       margin:0;
-      color:var(--red);
       font-size:13px;
       line-height:1.45;
-      font-weight:400;
+      color:var(--ink);
     }
 
     .filters{
@@ -319,55 +323,48 @@
     .filter{
       appearance:none;
       cursor:pointer;
-      border:1px solid var(--red);
+      border:1px solid var(--ink);
       border-radius:999px;
       background:transparent;
-      color:var(--red);
+      color:var(--ink);
       padding:9px 12px;
       text-transform:uppercase;
       font:700 11px Helvetica, Arial, sans-serif;
-      letter-spacing:.04em;
+      letter-spacing:.05em;
     }
 
     .filter.active,
     .filter:hover{
       background:var(--red);
-      color:var(--pink);
+      color:var(--paper);
+      border-color:var(--red);
     }
 
     .grid{
       display:grid;
-      grid-template-columns:repeat(3,1fr);
+      grid-template-columns:repeat(3, 1fr);
+      border:1px solid var(--ink);
+      background:var(--ink);
       gap:1px;
-      border:1px solid var(--red);
-      background:var(--red);
     }
 
     .project-card{
       display:flex;
       flex-direction:column;
       min-height:100%;
-      background:var(--pink);
+      background:var(--paper);
       overflow:hidden;
-      transition:background .15s ease;
+      transition:.15s ease;
     }
 
     .project-card:hover{
-      background:var(--pink-strong);
-    }
-
-    .project-card.featured{
-      background:var(--pink);
-    }
-
-    .project-card.featured:hover{
-      background:var(--pink-strong);
+      background:var(--soft);
     }
 
     .media-wrap{
       position:relative;
       background:#000;
-      border-bottom:1px solid var(--red);
+      border-bottom:1px solid var(--ink);
     }
 
     .media-wrap video{
@@ -383,7 +380,7 @@
       top:10px;
       left:10px;
       background:var(--red);
-      color:var(--pink);
+      color:var(--paper);
       border-radius:999px;
       padding:6px 9px;
       text-transform:uppercase;
@@ -410,14 +407,17 @@
     }
 
     h3{
+      margin:0;
       font-size:26px;
-      line-height:.96;
+      line-height:.95;
       font-weight:700;
+      letter-spacing:-.06em;
+      color:var(--ink);
     }
 
     .project-body p{
       margin:0;
-      color:var(--red);
+      color:var(--ink);
       font-size:13px;
       font-weight:400;
       line-height:1.45;
@@ -426,117 +426,157 @@
     .role{
       margin-top:auto!important;
       padding-top:12px;
-      border-top:1px solid var(--red);
+      border-top:1px solid var(--ink);
       font-size:11px!important;
       font-weight:700!important;
       text-transform:uppercase;
+      color:var(--red)!important;
     }
 
     .process{
       display:grid;
-      grid-template-columns:repeat(3,1fr);
+      grid-template-columns:repeat(3, 1fr);
+      border:1px solid var(--ink);
+      background:var(--ink);
       gap:1px;
-      border:1px solid var(--red);
-      background:var(--red);
     }
 
     .process-card{
-      padding:22px;
-      min-height:190px;
-      background:var(--pink);
+      background:var(--paper);
+      padding:24px;
+      min-height:210px;
     }
 
     .process-card span{
       display:inline-block;
-      margin-bottom:12px;
+      margin-bottom:14px;
       font-size:12px;
       font-weight:700;
       color:var(--red);
     }
 
     .process-card h3{
-      font-size:30px;
+      font-size:32px;
       margin-bottom:12px;
     }
 
     .process-card p{
-      color:var(--red);
+      color:var(--ink);
       font-size:14px;
       font-weight:400;
       margin:0;
+      line-height:1.45;
     }
 
     footer{
-      padding:64px 0 76px;
-      border-top:1px solid var(--red);
+      padding:76px 0;
+      background:var(--red);
+      color:var(--paper);
     }
 
     .footer-card{
-      background:var(--red);
-      color:var(--pink);
-      padding:34px;
-      border:1px solid var(--red);
+      display:grid;
+      grid-template-columns:repeat(12, 1fr);
+      gap:18px;
+      align-items:end;
     }
 
     .footer-card h2{
-      color:var(--pink);
-      font-size:clamp(42px, 6vw, 82px);
+      grid-column:1 / 8;
+      color:var(--paper);
+      font-size:clamp(48px, 8vw, 112px);
+    }
+
+    .footer-content{
+      grid-column:8 / 13;
     }
 
     .footer-card p{
-      color:var(--pink);
-      max-width:640px;
+      color:var(--paper);
+      max-width:520px;
       font-size:16px;
       font-weight:400;
     }
 
     .footer-card .btn{
-      border-color:var(--pink);
-      color:var(--pink);
+      border-color:var(--paper);
+      color:var(--paper);
       background:transparent;
     }
 
     .footer-card .btn:hover,
     .footer-card .btn.primary{
-      background:var(--pink);
+      background:var(--paper);
       color:var(--red);
     }
 
     .small{
       font-size:12px!important;
       margin-top:16px!important;
-      opacity:.88;
+      opacity:.9;
     }
 
-    @media (max-width:960px){
-      .hero-grid{
-        grid-template-columns:1fr;
+    @media (max-width:980px){
+      .hero-composition{
+        min-height:auto;
+        display:block;
       }
 
-      .hero-media{
-        grid-template-columns:1fr;
+      .hero-title{
+        position:relative;
+        top:auto;
+        white-space:normal;
+        margin:48px 0 24px;
+        font-size:clamp(58px, 17vw, 112px);
       }
 
-      .grid{
-        grid-template-columns:repeat(2,1fr);
+      .hero-video{
+        margin-top:0;
       }
 
-      .stats{
-        grid-template-columns:repeat(2,1fr);
+      .hero-panel,
+      .hero-intro{
+        margin-top:18px;
+        max-width:none;
+      }
+
+      .section-title{
+        display:block;
+      }
+
+      .section-label{
+        margin-bottom:14px;
+      }
+
+      .section-copy{
+        margin-top:18px;
+        max-width:620px;
       }
 
       .category-list{
-        grid-template-columns:repeat(2,1fr);
+        grid-template-columns:repeat(2, 1fr);
+      }
+
+      .grid{
+        grid-template-columns:repeat(2, 1fr);
       }
 
       .process{
         grid-template-columns:1fr;
       }
+
+      .footer-card{
+        display:block;
+      }
+
+      .footer-content{
+        margin-top:24px;
+      }
     }
 
     @media (max-width:640px){
       .container{
-        width:min(100% - 24px,1180px);
+        width:min(100% - 24px, 1220px);
       }
 
       header{
@@ -548,27 +588,21 @@
         flex-direction:column;
       }
 
-      .hero{
-        padding-top:44px;
+      nav{
+        gap:12px;
       }
 
-      h1{
-        font-size:clamp(46px, 17vw, 70px);
+      .hero{
+        padding-top:46px;
+      }
+
+      .hero-title{
+        font-size:clamp(48px, 18vw, 76px);
       }
 
       .grid,
-      .stats,
       .category-list{
         grid-template-columns:1fr;
-      }
-
-      .stat{
-        border-right:0;
-        border-bottom:1px solid var(--red);
-      }
-
-      .stat:last-child{
-        border-bottom:0;
       }
 
       .hero-actions{
@@ -578,23 +612,11 @@
       .btn{
         width:100%;
       }
-
-      .video-side-text{
-        font-size:18px;
-      }
     }
   </style>
 </head>
 
 <body>
-  <body>
-  <div style="position:fixed;top:0;left:0;right:0;z-index:9999;background:yellow;color:black;padding:20px;font-size:30px;text-align:center;">
-    PRUEBA CAMBIO EMILIA
-  </div>
-
-  <header>
-    <div class="container topbar">
-      <div class="brand">Emilia Mantese · Video / Edición</div>
   <header>
     <div class="container topbar">
       <div class="brand">Emilia Mantese · Video / Edición</div>
@@ -608,53 +630,34 @@
 
   <main>
     <section class="hero">
-      <div class="container hero-grid">
-        <div>
-          <p class="kicker">Editando desde 2021</p>
+      <div class="container hero-composition">
+        <div class="hero-meta">
+          Portfolio audiovisual
+          <span>Santa Fe · Argentina</span>
+        </div>
 
-          <h1>Editando contenido desde 2021, trabajemos juntos.</h1>
+        <div class="hero-video">
+          <video controls preload="metadata" poster="assets/thumbs/00_showreel.jpg">
+            <source src="assets/videos/00_showreel_base_sin_musica.mp4" type="video/mp4">
+          </video>
+        </div>
 
-          <p class="lead">
-            Soy Emilia Mantese, realizadora y editora audiovisual. Trabajo piezas para redes,
-            marcas, proyectos culturales y exploraciones personales con foco en ritmo, estética
-            y narrativa.
+        <h1 class="hero-title">Emilia Mantese</h1>
+
+        <div class="hero-panel">
+          <strong>Echá un vistazo a mis más recientes trabajos.</strong>
+          <p>Un recorrido por piezas para redes, marcas, cultura, eventos y proyectos personales.</p>
+        </div>
+
+        <div class="hero-intro">
+          <p>
+            Edito contenido desde 2021. Trabajo piezas audiovisuales con foco en ritmo,
+            estructura, estética y claridad narrativa.
           </p>
 
           <div class="hero-actions">
-            <a class="btn primary" href="#trabajos">Ver trabajos seleccionados</a>
-            <a class="btn" href="#contacto">Contactarme</a>
-          </div>
-
-          <div class="stats">
-            <div class="stat">
-              <strong>Desde 2021</strong>
-              <span>Editando y creando contenido para redes, marcas y proyectos culturales.</span>
-            </div>
-
-            <div class="stat">
-              <strong>Contenido digital</strong>
-              <span>Reels, piezas verticales, videos de producto, promociones y lanzamientos.</span>
-            </div>
-
-            <div class="stat">
-              <strong>Coberturas & eventos</strong>
-              <span>Registro de activaciones, espacios culturales, backstage y experiencias.</span>
-            </div>
-
-            <div class="stat">
-              <strong>Edición con mirada</strong>
-              <span>Ritmo, narrativa, color, recursos gráficos y adaptación a distintos formatos.</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="hero-media">
-          <p class="video-side-text">Echá un vistazo a mis más recientes trabajos.</p>
-
-          <div class="hero-card">
-            <video controls preload="metadata" poster="assets/thumbs/00_showreel.jpg">
-              <source src="assets/videos/00_showreel_base_sin_musica.mp4" type="video/mp4">
-            </video>
+            <a class="btn primary" href="#trabajos">Ver trabajos</a>
+            <a class="btn" href="#contacto">Trabajemos juntos</a>
           </div>
         </div>
       </div>
@@ -663,7 +666,8 @@
     <section id="enfoque">
       <div class="container">
         <div class="section-title">
-          <h2>Enfoque</h2>
+          <p class="section-label">Enfoque</p>
+          <h2>Contenido con dirección, ritmo y mirada.</h2>
           <p class="section-copy">
             Una forma de ordenar la variedad: clientes, cultura, redes, arquitectura,
             contenido editorial y una línea personal.
@@ -688,7 +692,7 @@
 
           <div class="cat">
             <h3>Editorial</h3>
-            <p>Videos con conducción, opinión, archivo y narrativa de creador de contenido.</p>
+            <p>Videos con conducción, opinión, archivo y narrativa de creadora de contenido.</p>
           </div>
 
           <div class="cat">
@@ -702,9 +706,10 @@
     <section id="trabajos">
       <div class="container">
         <div class="section-title">
-          <h2>Trabajos seleccionados</h2>
+          <p class="section-label">Trabajos</p>
+          <h2>Selección de piezas recientes.</h2>
           <p class="section-copy">
-            Una selección de piezas comerciales, culturales, editoriales y personales.
+            Piezas comerciales, culturales, editoriales y personales organizadas por tipo de proyecto.
           </p>
         </div>
 
@@ -712,13 +717,12 @@
           <button class="filter active" data-filter="all">Todo</button>
           <button class="filter" data-filter="Marcas &amp; Producto">Marcas &amp; Producto</button>
           <button class="filter" data-filter="Cultura &amp; Eventos">Cultura &amp; Eventos</button>
-          <button class="filter" data-filter="Arquitectura &amp; Contenido educativo">Arquitectura &amp; Contenido educativo</button>
-          <button class="filter" data-filter="Personal / Artístico">Personal / Artístico</button>
-          <button class="filter" data-filter="Editorial / Creator Content">Editorial / Creator Content</button>
+          <button class="filter" data-filter="Arquitectura &amp; Contenido educativo">Arquitectura</button>
+          <button class="filter" data-filter="Personal / Artístico">Personal</button>
+          <button class="filter" data-filter="Editorial / Creator Content">Editorial</button>
         </div>
 
         <div class="grid" id="projectGrid">
-
           <article class="project-card featured" data-category="Marcas &amp; Producto">
             <div class="media-wrap">
               <video controls preload="metadata" poster="assets/thumbs/01_don-marcos-verano.jpg">
@@ -726,7 +730,6 @@
               </video>
               <span class="pill">Cliente / redes</span>
             </div>
-
             <div class="project-body">
               <p class="eyebrow">Marcas & Producto · Vertical · Redes sociales · 0:32</p>
               <h3>Don Marcos — Verano</h3>
@@ -742,7 +745,6 @@
               </video>
               <span class="pill">Producto / food</span>
             </div>
-
             <div class="project-body">
               <p class="eyebrow">Marcas & Producto · Vertical · Redes sociales · 0:20</p>
               <h3>Conexión Natural — Picada saludable</h3>
@@ -758,7 +760,6 @@
               </video>
               <span class="pill">Cobertura</span>
             </div>
-
             <div class="project-body">
               <p class="eyebrow">Cultura & Eventos · Vertical · Evento / activación · 1:11</p>
               <h3>Universo — Cobertura de evento</h3>
@@ -774,7 +775,6 @@
               </video>
               <span class="pill">Arquitectura</span>
             </div>
-
             <div class="project-body">
               <p class="eyebrow">Arquitectura & Contenido educativo · Vertical · Antes / después · 0:37</p>
               <h3>Estudio Perspectiva — Transformación de espacio</h3>
@@ -790,7 +790,6 @@
               </video>
               <span class="pill">Educativo / redes</span>
             </div>
-
             <div class="project-body">
               <p class="eyebrow">Arquitectura & Contenido educativo · Vertical · Tips / contenido de valor · 0:55</p>
               <h3>ePerspectiva — 5 tips para tu cocina</h3>
@@ -806,7 +805,6 @@
               </video>
               <span class="pill">Cultura / agenda</span>
             </div>
-
             <div class="project-body">
               <p class="eyebrow">Cultura & Eventos · Vertical · Comunicación cultural · 0:56</p>
               <h3>Cine Boutique — Ciclo Mirada Femenina</h3>
@@ -822,7 +820,6 @@
               </video>
               <span class="pill">Moda / backstage</span>
             </div>
-
             <div class="project-body">
               <p class="eyebrow">Marcas & Producto · Horizontal · Recorte visual · 0:13</p>
               <h3>Malta Caramelo — Backstage sesión de fotos</h3>
@@ -838,7 +835,6 @@
               </video>
               <span class="pill">Autoral</span>
             </div>
-
             <div class="project-body">
               <p class="eyebrow">Personal / Artístico · Horizontal · Pieza personal · 1:53</p>
               <h3>Disociados</h3>
@@ -854,7 +850,6 @@
               </video>
               <span class="pill">Producto / natural</span>
             </div>
-
             <div class="project-body">
               <p class="eyebrow">Marcas & Producto · Vertical · Redes sociales · 0:09</p>
               <h3>Conexión Natural — Yerba orgánica</h3>
@@ -870,7 +865,6 @@
               </video>
               <span class="pill">Experiencia</span>
             </div>
-
             <div class="project-body">
               <p class="eyebrow">Cultura & Eventos · Vertical · Lifestyle cultural · 0:31</p>
               <h3>Cine Boutique — Experiencia Otoño</h3>
@@ -886,7 +880,6 @@
               </video>
               <span class="pill">Archivo / relato</span>
             </div>
-
             <div class="project-body">
               <p class="eyebrow">Editorial / Creator Content · Vertical · Contenido editorial · 2:27</p>
               <h3>Comentario editorial — Momento televisivo histórico</h3>
@@ -902,7 +895,6 @@
               </video>
               <span class="pill">Cine / opinión</span>
             </div>
-
             <div class="project-body">
               <p class="eyebrow">Editorial / Creator Content · Horizontal · Reseña audiovisual · 3:22</p>
               <h3>Reseña / comentario de película</h3>
@@ -918,7 +910,6 @@
               </video>
               <span class="pill">Reacción / cine</span>
             </div>
-
             <div class="project-body">
               <p class="eyebrow">Editorial / Creator Content · Vertical · Creator content · 3:39</p>
               <h3>Dune — Reacción a tráiler</h3>
@@ -926,7 +917,6 @@
               <p class="role">Rol: conducción / edición</p>
             </div>
           </article>
-
         </div>
       </div>
     </section>
@@ -934,9 +924,10 @@
     <section>
       <div class="container">
         <div class="section-title">
-          <h2>Servicios posibles</h2>
+          <p class="section-label">Servicios</p>
+          <h2>Formatos posibles.</h2>
           <p class="section-copy">
-            Formatos que puedo desarrollar para marcas, proyectos culturales y creadores.
+            Piezas que puedo desarrollar para marcas, proyectos culturales, emprendimientos y creadores.
           </p>
         </div>
 
@@ -964,24 +955,22 @@
   </main>
 
   <footer id="contacto">
-    <div class="container">
-      <div class="footer-card">
-        <div>
-          <h2>Hagamos algo juntos.</h2>
+    <div class="container footer-card">
+      <h2>Trabajemos juntos.</h2>
 
-          <p>
-            Soy Emilia Mantese, realizadora y editora audiovisual. Estoy disponible para videos comerciales,
-            coberturas, edición, contenido digital y proyectos audiovisuales con identidad propia.
-          </p>
+      <div class="footer-content">
+        <p>
+          Soy Emilia Mantese, realizadora y editora audiovisual. Estoy disponible para videos comerciales,
+          coberturas, edición, contenido digital y proyectos audiovisuales con identidad propia.
+        </p>
 
-          <div class="hero-actions">
-            <a class="btn primary" href="mailto:emiliamantese1@gmail.com">emiliamantese1@gmail.com</a>
-            <a class="btn" href="https://www.instagram.com/emilia.mantese/" target="_blank" rel="noopener">@emilia.mantese</a>
-            <a class="btn" href="https://wa.me/5493424405349" target="_blank" rel="noopener">WhatsApp</a>
-          </div>
-
-          <p class="small">Santa Fe, Argentina · Disponible para proyectos y colaboraciones.</p>
+        <div class="hero-actions">
+          <a class="btn primary" href="mailto:emiliamantese1@gmail.com">emiliamantese1@gmail.com</a>
+          <a class="btn" href="https://www.instagram.com/emilia.mantese/" target="_blank" rel="noopener">@emilia.mantese</a>
+          <a class="btn" href="https://wa.me/5493424405349" target="_blank" rel="noopener">WhatsApp</a>
         </div>
+
+        <p class="small">Santa Fe, Argentina · Disponible para proyectos y colaboraciones.</p>
       </div>
     </div>
   </footer>
@@ -1004,4 +993,3 @@
   </script>
 </body>
 </html>
-```
